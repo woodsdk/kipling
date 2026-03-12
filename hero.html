@@ -221,13 +221,12 @@
     /* Bottom nav bar */
 
     .hero-nav {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
       z-index: 10;
       display: flex;
       gap: 0;
+      width: fit-content;
+      margin: -30px auto 0;
       background: rgba(255, 255, 255, 0.72);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
@@ -413,14 +412,14 @@
       <button class="hero-dot" onclick="heroGo(3)"></button>
     </div>
 
-    <!-- Bottom nav -->
-    <nav class="hero-nav">
-      <a href="rejseoversigt.html" class="hero-nav-item active">Rejseoversigt</a>
-      <a href="#" class="hero-nav-item">Brug for hjælp?</a>
-      <a href="#" class="hero-nav-item">Praktisk info</a>
-    </nav>
-
   </div>
+
+  <!-- Bottom nav (outside hero so it's not clipped) -->
+  <nav class="hero-nav">
+    <a href="rejseoversigt.html" class="hero-nav-item active">Rejseoversigt</a>
+    <a href="#" class="hero-nav-item">Brug for hjælp?</a>
+    <a href="#" class="hero-nav-item">Praktisk info</a>
+  </nav>
 
   <!-- ============ INTRO ============ -->
   <section class="intro">
