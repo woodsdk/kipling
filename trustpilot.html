@@ -6,35 +6,39 @@
   <title>Trustpilot – Kipling Travel</title>
   <link rel="stylesheet" href="style.css?v=2">
   <style>
-    /* ---- Trustpilot section ---- */
+    /* ---- Trustpilot bar ---- */
 
-    .tp-section {
-      max-width: 1080px;
+    .tp-bar {
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 60px 24px 80px;
+      padding: 48px 24px 60px;
+      display: grid;
+      grid-template-columns: auto 1fr 1fr;
+      gap: 40px;
+      align-items: start;
     }
 
-    .tp-header {
+    /* Left: Trustpilot branding */
+
+    .tp-brand {
       display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 8px;
     }
 
     .tp-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .tp-logo-icon {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
     }
 
     .tp-logo-text {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       color: #1a1a1a;
     }
@@ -45,8 +49,8 @@
     }
 
     .tp-star {
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
       background: #00b67a;
       display: flex;
       align-items: center;
@@ -55,104 +59,66 @@
     }
 
     .tp-star svg {
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
       fill: #fff;
     }
 
-    .tp-rating-text {
-      font-size: 14px;
-      color: #888;
-      font-weight: 500;
+    .tp-score {
+      font-size: 13px;
+      color: #777;
     }
 
-    .tp-rating-text strong {
+    .tp-score a {
       color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
 
-    /* ---- Testimonial cards ---- */
-
-    .tp-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+    .tp-score strong {
+      color: #00b67a;
     }
 
-    .tp-card {
-      background: #fff;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      border-radius: 12px;
-      padding: 32px 28px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 8px 32px rgba(0, 0, 0, 0.03);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    /* Testimonial columns */
+
+    .tp-testimonial {
+      padding: 0 20px;
+      border-left: 1px solid #e8e0d6;
     }
 
-    .tp-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .tp-testimonial-title {
+      font-size: 16px;
+      font-weight: 700;
+      font-style: italic;
+      color: #1a1a1a;
+      margin-bottom: 12px;
     }
 
-    .tp-card-trip {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: #f5a623;
-      background: rgba(245, 166, 35, 0.08);
-      padding: 5px 12px;
-      border-radius: 20px;
-    }
-
-    .tp-card-stars {
-      display: flex;
-      gap: 2px;
-    }
-
-    .tp-card-star {
-      width: 18px;
-      height: 18px;
-      background: #00b67a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 2px;
-    }
-
-    .tp-card-star svg {
-      width: 11px;
-      height: 11px;
-      fill: #fff;
-    }
-
-    .tp-card-quote {
-      font-size: 15px;
+    .tp-testimonial-text {
+      font-size: 14px;
       line-height: 1.7;
-      color: #444;
-      flex: 1;
+      color: #555;
+      margin-bottom: 16px;
     }
 
-    .tp-card-author {
+    .tp-testimonial-author {
       font-size: 13px;
       font-weight: 600;
-      color: #1a1a1a;
-      padding-top: 12px;
-      border-top: 1px solid #f0ebe5;
+      color: #999;
     }
 
     /* ---- Responsive ---- */
 
-    @media (max-width: 700px) {
-      .tp-grid {
+    @media (max-width: 800px) {
+      .tp-bar {
         grid-template-columns: 1fr;
+        gap: 32px;
       }
 
-      .tp-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+      .tp-testimonial {
+        border-left: none;
+        border-top: 1px solid #e8e0d6;
+        padding: 20px 0 0;
       }
     }
   </style>
@@ -166,18 +132,17 @@
     <a href="formularx.html">Formular X</a>
   </nav>
 
-  <div class="tp-section">
+  <div class="tp-bar">
 
-    <div class="tp-header">
+    <!-- Trustpilot branding -->
+    <div class="tp-brand">
       <div class="tp-logo">
-        <!-- Trustpilot star icon -->
         <svg class="tp-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
           <rect width="32" height="32" rx="4" fill="#00b67a"/>
           <path d="M16 6l3.09 6.26L26 13.27l-5 4.87 1.18 6.86L16 21.77 9.82 25l1.18-6.86-5-4.87 6.91-1.01L16 6z" fill="#fff"/>
         </svg>
         <span class="tp-logo-text">Trustpilot</span>
       </div>
-
       <div class="tp-stars">
         <span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
         <span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
@@ -185,44 +150,21 @@
         <span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
         <span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
       </div>
-
-      <span class="tp-rating-text"><strong>4,9</strong> · 993 anmeldelser</span>
+      <span class="tp-score">TrustScore <strong>4.9</strong> | <a href="https://dk.trustpilot.com/review/kiplingtravel.dk">953 anmeldelser</a></span>
     </div>
 
-    <div class="tp-grid">
+    <!-- Udtalelse 1: Marokko -->
+    <div class="tp-testimonial">
+      <div class="tp-testimonial-title">Marokko</div>
+      <p class="tp-testimonial-text">Tusind tak for jeres helt utroligt velplanlagte tur, professionelle håndtering og servicemindede betjening hele vejen igennem. ALT var perfekt. Hoteller, chauffør, guider – alt var præcis både vedr. tid og kvalitet. Det bliver ikke sidste tur med Kipling Travel.</p>
+      <div class="tp-testimonial-author">– Finn og Bente</div>
+    </div>
 
-      <!-- Udtalelse 1: Marokko -->
-      <div class="tp-card">
-        <div class="tp-card-header">
-          <span class="tp-card-trip">Marokko</span>
-          <div class="tp-card-stars">
-            <span class="tp-card-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
-            <span class="tp-card-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
-            <span class="tp-card-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
-            <span class="tp-card-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
-            <span class="tp-card-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
-          </div>
-        </div>
-        <p class="tp-card-quote">Tusind tak for jeres helt utroligt velplanlagte tur, professionelle håndtering og servicemindede betjening hele vejen igennem. ALT var perfekt. Hoteller, chauffør, guider – alt var præcis både vedr. tid og kvalitet. Det bliver ikke sidste tur med Kipling Travel.</p>
-        <div class="tp-card-author">– Finn og Bente</div>
-      </div>
-
-      <!-- Udtalelse 2: Toubkal trek -->
-      <div class="tp-card">
-        <div class="tp-card-header">
-          <span class="tp-card-trip">Toubkal trek</span>
-          <div class="tp-card-stars">
-            <span class="tp-card-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
-            <span class="tp-card-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
-            <span class="tp-card-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
-            <span class="tp-card-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
-            <span class="tp-card-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.8 3-1.1-6.5L.4 8.8l6.5-.9z"/></svg></span>
-          </div>
-        </div>
-        <p class="tp-card-quote">Vi havde en helt fantastisk rejse – det var en kæmpe oplevelse på alle måder. Naturen, kulturen, bjergene, menneskene … alt er røget ind som stor formueværdi på oplevelseskontoen!</p>
-        <div class="tp-card-author">– Frank og Heidi</div>
-      </div>
-
+    <!-- Udtalelse 2: Toubkal trek -->
+    <div class="tp-testimonial">
+      <div class="tp-testimonial-title">Toubkal trek</div>
+      <p class="tp-testimonial-text">Vi havde en helt fantastisk rejse – det var en kæmpe oplevelse på alle måder. Naturen, kulturen, bjergene, menneskene … alt er røget ind som stor formueværdi på oplevelseskontoen!</p>
+      <div class="tp-testimonial-author">– Frank og Heidi</div>
     </div>
 
   </div>
