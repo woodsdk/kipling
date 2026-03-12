@@ -3,33 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modtag et rejsetilbud – Kipling Travel</title>
+  <title>Skræddersy din rejse – Kipling Travel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <nav class="site-nav">
     <a href="rejseoversigt.html">Rejseoversigt</a>
-    <a href="formular.html" class="active">Formular A</a>
+    <a href="formular.html">Formular A</a>
     <a href="bestil.html">Formular B</a>
-    <a href="formularx.html">Formular X</a>
+    <a href="formularx.html" class="active">Formular X</a>
   </nav>
 
   <div class="form-page">
 
     <div class="form-header">
-      <h1 class="form-title">Modtag et rejsetilbud</h1>
-      <p class="form-subtitle">Udfyld formularen og vi vender tilbage med rejseprogram og et uforpligtende rejsetilbud.</p>
-      <p class="form-subtitle form-subtitle-small">Er du i tvivl? Ring til os på <strong>xx xx xx xx</strong> eller skriv til <strong>info@kiplingtravel.dk</strong></p>
-    </div>
-
-    <!-- Trip banner -->
-    <div class="trip-banner">
-      <img src="Marokko/Sahara-Marokko-KiplingTravel-025.JPG" alt="Rejsebillede">
-      <div class="trip-banner-overlay">
-        <span class="trip-banner-title" id="bannerTitle">Marrakech, bjerg og ørken</span>
-        <span class="trip-banner-duration" id="bannerDuration">(8 dages varighed)</span>
-      </div>
+      <h1 class="form-title">Skræddersy din rejse</h1>
+      <p class="form-subtitle">Fortæl os om din drømmerejse, så sammensætter vi det perfekte tilbud til dig.</p>
     </div>
 
     <!-- Progress -->
@@ -56,7 +46,56 @@
     <div class="form-step active" data-step="1">
 
       <div class="form-section">
-        <h2 class="section-title">Antal rejsende</h2>
+        <h2 class="section-title">Destination & rejsetype</h2>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label class="field-label">Hvor vil du hen? <span class="req">*</span></label>
+            <div class="select-wrap">
+              <select id="destination" class="field-input field-select">
+                <option value="">Vælg destination</option>
+                <optgroup label="Afrika">
+                  <option>Marokko</option>
+                  <option>Tanzania</option>
+                  <option>Kenya</option>
+                  <option>Sydafrika</option>
+                  <option>Madagaskar</option>
+                  <option>Uganda</option>
+                </optgroup>
+                <optgroup label="Asien">
+                  <option>Nepal</option>
+                  <option>Sri Lanka</option>
+                  <option>Myanmar</option>
+                  <option>Japan</option>
+                  <option>Indien</option>
+                </optgroup>
+                <optgroup label="Sydamerika">
+                  <option>Peru</option>
+                  <option>Bolivia</option>
+                  <option>Colombia</option>
+                </optgroup>
+                <optgroup label="Mellemøsten">
+                  <option>Jordan</option>
+                  <option>Oman</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Hvilken type rejse? <span class="req">*</span></label>
+            <div class="select-wrap">
+              <select id="tripType" class="field-input field-select">
+                <option value="">Vælg rejsetype</option>
+                <option>Safari</option>
+                <option>Trekking & vandring</option>
+                <option>Kultur & historie</option>
+                <option>Strand & afslapning</option>
+                <option>Eventyr & aktivitet</option>
+                <option>Kombinationsrejse</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
         <div class="form-row">
           <div class="form-field">
@@ -399,6 +438,8 @@
       const returnCustomer = document.querySelector('input[name="returnCustomer"]:checked')?.value;
 
       const rows = [
+        { label: 'Destination', value: val('destination') },
+        { label: 'Rejsetype', value: val('tripType') },
         { label: 'Rejsende', value: `${val('persons')} pers.${val('children') !== '0' ? ` (heraf ${val('children')} børn)` : ''}` },
         { label: 'Afrejse', value: depDate },
         { label: 'Fleksibel', value: flexible === 'ja' ? 'Ja' : 'Nej' },
@@ -411,7 +452,7 @@
       ];
 
       const altDate = val('altDate');
-      if (altDate && altDate !== '–') rows.splice(2, 0, { label: 'Alternativ dato', value: altDate });
+      if (altDate && altDate !== '–') rows.splice(4, 0, { label: 'Alternativ dato', value: altDate });
 
       const wishes = val('wishes');
       if (wishes && wishes !== '–') rows.push({ label: 'Ønsker', value: wishes });
