@@ -26,28 +26,150 @@
     <div class="trip-banner">
       <img src="Marokko/Sahara-Marokko-KiplingTravel-025.JPG" alt="Rejsebillede">
       <div class="trip-banner-overlay">
-        <span class="trip-banner-title">Marrakech, bjerg og ørken</span>
-        <span class="trip-banner-duration">(8 dages varighed)</span>
+        <span class="trip-banner-title" id="bannerTitle">Marrakech, bjerg og ørken</span>
+        <span class="trip-banner-duration" id="bannerDuration">(8 dages varighed)</span>
       </div>
     </div>
 
-    <!-- Formular -->
-    <form class="booking-form" onsubmit="return false;">
+    <!-- Progress -->
+    <div class="form-progress">
+      <div class="progress-track">
+        <button class="progress-step active" data-step="1">
+          <span class="step-dot"></span>
+          <span class="step-label">Din rejse</span>
+        </button>
+        <div class="step-connector"><div class="connector-fill"></div></div>
+        <button class="progress-step" data-step="2">
+          <span class="step-dot"></span>
+          <span class="step-label">Om dig</span>
+        </button>
+        <div class="step-connector"><div class="connector-fill"></div></div>
+        <button class="progress-step" data-step="3">
+          <span class="step-dot"></span>
+          <span class="step-label">Ønsker & overblik</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 1: Din rejse -->
+    <div class="form-step active" data-step="1">
 
       <div class="form-section">
-        <h2 class="section-title">Afrejsedato</h2>
+        <h2 class="section-title">Antal rejsende</h2>
 
-        <div class="form-field">
-          <label class="field-label">Ønsket afrejsedato <span class="req">*</span></label>
-          <input type="date" id="depDate" class="field-input">
+        <div class="form-row">
+          <div class="form-field">
+            <label class="field-label">Antal personer <span class="req">*</span></label>
+            <div class="select-wrap">
+              <select id="persons" class="field-input field-select">
+                <option value="">Antal</option>
+                <option>1</option><option>2</option><option>3</option>
+                <option>4</option><option>5</option><option>6</option>
+                <option>7</option><option>8</option><option>9</option><option>10+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Heraf børn <span class="note">(0–17 år)</span></label>
+            <div class="select-wrap">
+              <select id="children" class="field-input field-select">
+                <option value="0">0</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="form-section">
-        <h2 class="section-title">Oplysninger</h2>
+        <h2 class="section-title">Hvornår & hvor længe</h2>
 
         <div class="form-field">
-          <label class="field-label">Kontaktperson <span class="req">*</span></label>
+          <label class="field-label">Ønsket afrejsedato <span class="req">*</span></label>
+          <div class="form-row form-row-3">
+            <div class="select-wrap">
+              <select id="depDay" class="field-input field-select">
+                <option value="">Dag</option>
+                <script>document.write([...Array(31)].map((_,i)=>`<option>${i+1}</option>`).join(''))</script>
+              </select>
+            </div>
+            <div class="select-wrap">
+              <select id="depMonth" class="field-input field-select">
+                <option value="">Måned</option>
+                <option value="1">Januar</option><option value="2">Februar</option>
+                <option value="3">Marts</option><option value="4">April</option>
+                <option value="5">Maj</option><option value="6">Juni</option>
+                <option value="7">Juli</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">Oktober</option>
+                <option value="11">November</option><option value="12">December</option>
+              </select>
+            </div>
+            <div class="select-wrap">
+              <select id="depYear" class="field-input field-select">
+                <option value="">År</option>
+                <option>2026</option><option>2027</option><option>2028</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="field-label">Evt. anden rejsedato</label>
+          <input type="text" id="altDate" class="field-input" placeholder="Fx 'Marts 2027' eller 'Fleksibel inden for 2 uger'">
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label class="field-label">Er du fleksibel med datoer?</label>
+            <div class="toggle-group">
+              <label class="toggle-option">
+                <input type="radio" name="flexible" value="ja" checked>
+                <span class="toggle-label">Ja, fleksibel</span>
+              </label>
+              <label class="toggle-option">
+                <input type="radio" name="flexible" value="nej">
+                <span class="toggle-label">Faste datoer</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Ønsket varighed <span class="req">*</span></label>
+            <div class="select-wrap">
+              <select id="duration" class="field-input field-select">
+                <option value="">Vælg varighed</option>
+                <option>5–7 dage</option>
+                <option>8–10 dage</option>
+                <option>11–14 dage</option>
+                <option>15+ dage</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="field-label">Afrejse fra</label>
+          <div class="select-wrap">
+            <select id="airport" class="field-input field-select">
+              <option>København</option>
+              <option>Billund</option>
+              <option>Aalborg</option>
+              <option>Aarhus</option>
+              <option>Andet</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Step 2: Om dig -->
+    <div class="form-step" data-step="2">
+
+      <div class="form-section">
+        <h2 class="section-title">Kontaktoplysninger</h2>
+
+        <div class="form-field">
+          <label class="field-label">Fulde navn <span class="req">*</span></label>
           <input type="text" id="name" class="field-input" placeholder="Fornavn og efternavn">
         </div>
 
@@ -57,54 +179,102 @@
             <input type="email" id="email" class="field-input" placeholder="din@email.dk">
           </div>
           <div class="form-field">
-            <label class="field-label">Mobilnummer <span class="req">*</span></label>
+            <label class="field-label">Telefon <span class="req">*</span></label>
             <input type="tel" id="phone" class="field-input" placeholder="+45 00 00 00 00">
           </div>
         </div>
+      </div>
+
+      <div class="form-section">
+        <h2 class="section-title">Adresse <span class="note">(valgfrit)</span></h2>
+
+        <div class="form-row form-row-3">
+          <div class="form-field" style="grid-column: 1 / 2">
+            <label class="field-label">Adresse</label>
+            <input type="text" id="address" class="field-input" placeholder="Vejnavn og nr.">
+          </div>
+          <div class="form-field">
+            <label class="field-label">Postnr.</label>
+            <input type="text" id="zip" class="field-input" placeholder="0000">
+          </div>
+          <div class="form-field">
+            <label class="field-label">By</label>
+            <input type="text" id="city" class="field-input" placeholder="By">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-field">
+          <label class="field-label">Har du rejst med Kipling Travel før?</label>
+          <div class="toggle-group">
+            <label class="toggle-option">
+              <input type="radio" name="returnCustomer" value="ja">
+              <span class="toggle-label">Ja</span>
+            </label>
+            <label class="toggle-option">
+              <input type="radio" name="returnCustomer" value="nej" checked>
+              <span class="toggle-label">Nej</span>
+            </label>
+          </div>
+        </div>
 
         <div class="form-field">
-          <label class="field-label">Antal personer <span class="req">*</span></label>
+          <label class="field-label">Hvor har du hørt om os?</label>
           <div class="select-wrap">
-            <select id="persons" class="field-input field-select">
-              <option value="">Vælg antal</option>
-              <option>1</option><option>2</option><option>3</option>
-              <option>4</option><option>5</option><option>6</option>
-              <option>7</option><option>8</option><option>9</option><option>10+</option>
+            <select id="heardFrom" class="field-input field-select">
+              <option value="">Vælg</option>
+              <option>Google</option>
+              <option>Facebook / Instagram</option>
+              <option>Anbefaling fra ven/familie</option>
+              <option>Rejsemesse</option>
+              <option>Avis/magasin</option>
+              <option>Har rejst med Kipling før</option>
+              <option>Andet</option>
             </select>
           </div>
         </div>
+      </div>
+
+    </div>
+
+    <!-- Step 3: Ønsker & overblik -->
+    <div class="form-step" data-step="3">
+
+      <div class="form-section">
+        <h2 class="section-title">Ønsker til rejsen</h2>
 
         <div class="form-field">
-          <label class="field-label">Evt. anden rejsedato</label>
-          <input type="text" id="altDate" class="field-input" placeholder="Alternativ dato hvis den ønskede ikke passer">
+          <label class="field-label">Har du særlige ønsker?</label>
+          <textarea id="wishes" class="field-input field-textarea" rows="4" placeholder="Fortæl os om dine ønsker – fx kostpræferencer, enkeltværelse, særlige oplevelser du drømmer om..."></textarea>
         </div>
 
-        <div class="form-row">
+        <div class="form-row form-row-3">
           <div class="form-field">
-            <label class="field-label">Har du rejst med Kipling Travel før?</label>
-            <div class="toggle-group">
-              <label class="toggle-option">
-                <input type="radio" name="returnCustomer" value="ja">
-                <span class="toggle-label">Ja</span>
-              </label>
-              <label class="toggle-option">
-                <input type="radio" name="returnCustomer" value="nej" checked>
-                <span class="toggle-label">Nej</span>
-              </label>
+            <label class="field-label">Afbestillingsforsikring</label>
+            <div class="select-wrap">
+              <select id="cancelInsurance" class="field-input field-select">
+                <option>Tilbud ønskes</option>
+                <option>Nej tak</option>
+              </select>
             </div>
           </div>
           <div class="form-field">
-            <label class="field-label">Hvordan har du hørt om Kipling Travel?</label>
+            <label class="field-label">Rejseforsikring</label>
             <div class="select-wrap">
-              <select id="heardFrom" class="field-input field-select">
+              <select id="travelInsurance" class="field-input field-select">
+                <option>Tilbud ønskes</option>
+                <option>Nej tak</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Enkeltværelse</label>
+            <div class="select-wrap">
+              <select id="singleRoom" class="field-input field-select">
                 <option value="">Vælg</option>
-                <option>Google</option>
-                <option>Facebook / Instagram</option>
-                <option>Anbefaling fra ven/familie</option>
-                <option>Rejsemesse</option>
-                <option>Avis/magasin</option>
-                <option>Har rejst med Kipling før</option>
-                <option>Andet</option>
+                <option>Ja</option>
+                <option>Nej</option>
               </select>
             </div>
           </div>
@@ -113,36 +283,148 @@
         <div class="form-field">
           <label class="checkbox-label">
             <input type="checkbox" id="newsletter">
-            <span>Ønsker at modtage Kipling Travels nyhedsbrev</span>
+            <span>Jeg vil gerne modtage Kipling Travels nyhedsbrev</span>
           </label>
         </div>
       </div>
 
       <div class="form-section">
-        <h2 class="section-title">Evt. ønsker eller kommentarer</h2>
-
-        <div class="form-field">
-          <textarea id="wishes" class="field-input field-textarea" rows="4" placeholder="Evt. kostønsker, enkeltværelse, andre ønsker..."></textarea>
+        <div class="callback-box">
+          <div class="callback-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="currentColor"/></svg>
+          </div>
+          <div class="callback-content">
+            <p class="callback-text">For at vi hurtigst muligt kan give dig det bedste tilbud, vil du blive ringet op af <strong>xx xx xx xx</strong> med et skræddersyet tilbud.</p>
+            <div class="form-field">
+              <label class="field-label">Hvornår vil det passe dig bedst?</label>
+              <div class="select-wrap">
+                <select id="callbackTime" class="field-input field-select">
+                  <option value="">Vælg tidspunkt</option>
+                  <option>Formiddag (9–12)</option>
+                  <option>Eftermiddag (12–15)</option>
+                  <option>Sen eftermiddag (15–17)</option>
+                  <option>Aften (17–19)</option>
+                  <option>Ingen præference</option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Submit -->
-      <div class="form-nav">
-        <div></div>
-        <button class="btn btn-next btn-submit" id="btnSubmit">Bestil rejse</button>
+      <div class="form-section">
+        <h2 class="section-title">Overblik</h2>
+        <div class="summary" id="summary"></div>
       </div>
 
-    </form>
+    </div>
+
+    <!-- Navigation -->
+    <div class="form-nav">
+      <button class="btn btn-back" id="btnBack" style="visibility: hidden;">← Tilbage</button>
+      <button class="btn btn-next" id="btnNext">Næste</button>
+    </div>
 
   </div>
 
   <script>
-    const btnSubmit = document.getElementById('btnSubmit');
-    btnSubmit.addEventListener('click', () => {
-      btnSubmit.textContent = '✓ Tak – vi kontakter dig snarest';
-      btnSubmit.disabled = true;
-      btnSubmit.classList.add('btn-sent');
+    const totalSteps = 3;
+    let current = 1;
+
+    const steps = document.querySelectorAll('.form-step');
+    const progressSteps = document.querySelectorAll('.progress-step');
+    const connectorFills = document.querySelectorAll('.connector-fill');
+    const btnBack = document.getElementById('btnBack');
+    const btnNext = document.getElementById('btnNext');
+
+    function goTo(step) {
+      current = step;
+      steps.forEach(s => s.classList.toggle('active', +s.dataset.step === current));
+      progressSteps.forEach(s => {
+        const n = +s.dataset.step;
+        s.classList.toggle('active', n === current);
+        s.classList.toggle('done', n < current);
+      });
+
+      connectorFills.forEach((c, i) => {
+        c.classList.toggle('filled', (i + 1) < current);
+      });
+
+      btnBack.style.visibility = current === 1 ? 'hidden' : 'visible';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (current === totalSteps) {
+        btnNext.textContent = 'Send forespørgsel';
+        btnNext.classList.add('btn-submit');
+        buildSummary();
+      } else {
+        btnNext.textContent = 'Næste';
+        btnNext.classList.remove('btn-submit');
+      }
+    }
+
+    btnNext.addEventListener('click', () => {
+      if (current === totalSteps) {
+        btnNext.textContent = '✓ Tak – vi kontakter dig snarest';
+        btnNext.disabled = true;
+        btnNext.classList.add('btn-sent');
+        return;
+      }
+      if (current < totalSteps) goTo(current + 1);
     });
+
+    btnBack.addEventListener('click', () => {
+      if (current > 1) goTo(current - 1);
+    });
+
+    progressSteps.forEach(s => {
+      s.addEventListener('click', () => {
+        const target = +s.dataset.step;
+        if (target <= current) goTo(target);
+      });
+    });
+
+    function val(id) { return document.getElementById(id)?.value || '–'; }
+
+    function buildSummary() {
+      const flexible = document.querySelector('input[name="flexible"]:checked')?.value;
+      const depDay = val('depDay');
+      const depMonth = document.getElementById('depMonth');
+      const depMonthText = depMonth?.selectedOptions[0]?.text || '–';
+      const depYear = val('depYear');
+      const depDate = (depDay !== '–' && depMonthText !== '–' && depYear !== '–')
+        ? `${depDay}. ${depMonthText} ${depYear}` : '–';
+
+      const returnCustomer = document.querySelector('input[name="returnCustomer"]:checked')?.value;
+
+      const rows = [
+        { label: 'Rejsende', value: `${val('persons')} pers.${val('children') !== '0' ? ` (heraf ${val('children')} børn)` : ''}` },
+        { label: 'Afrejse', value: depDate },
+        { label: 'Fleksibel', value: flexible === 'ja' ? 'Ja' : 'Nej' },
+        { label: 'Varighed', value: val('duration') },
+        { label: 'Fra', value: val('airport') },
+        { label: 'Kontakt', value: val('name') },
+        { label: 'E-mail', value: val('email') },
+        { label: 'Telefon', value: val('phone') },
+        { label: 'Rejst med Kipling før', value: returnCustomer === 'ja' ? 'Ja' : 'Nej' },
+      ];
+
+      const altDate = val('altDate');
+      if (altDate && altDate !== '–') rows.splice(2, 0, { label: 'Alternativ dato', value: altDate });
+
+      const wishes = val('wishes');
+      if (wishes && wishes !== '–') rows.push({ label: 'Ønsker', value: wishes });
+
+      const callbackTime = val('callbackTime');
+      if (callbackTime && callbackTime !== '–') rows.push({ label: 'Ring mig', value: callbackTime });
+
+      document.getElementById('summary').innerHTML = rows.map(r =>
+        `<div class="summary-row">
+          <span class="summary-label">${r.label}</span>
+          <span class="summary-value">${r.value}</span>
+        </div>`
+      ).join('');
+    }
   </script>
 
 </body>
