@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marokko – Kipling Travel</title>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
   <style>
     /* ============================================
        HERO
@@ -222,18 +222,17 @@
 
     .hero-nav {
       position: absolute;
-      bottom: 0;
+      bottom: -28px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 4;
       display: flex;
       gap: 0;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-radius: 16px 16px 0 0;
-      box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     }
 
     .hero-nav-item {
@@ -259,12 +258,12 @@
     .hero-nav-item.active::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: 6px;
       left: 20px;
       right: 20px;
       height: 4px;
       background: #f5a623;
-      border-radius: 4px 4px 0 0;
+      border-radius: 4px;
     }
 
     /* ============================================
@@ -274,7 +273,7 @@
     .intro {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 64px 60px;
+      padding: 80px 60px 64px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
