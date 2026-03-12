@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marokko – Kipling Travel</title>
+  <link rel="stylesheet" href="style.css?v=3">
+  <style>
+    /* ============================================
+       HERO
+       ============================================ */
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 85vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    /* Slideshow images */
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: heroZoom 18s ease forwards;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.0); }
+      to { transform: scale(1.08); }
+    }
+
+    /* Gradient overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom,
+          rgba(0, 0, 0, 0.25) 0%,
+          rgba(0, 0, 0, 0.0) 30%,
+          rgba(0, 0, 0, 0.0) 50%,
+          rgba(0, 0, 0, 0.65) 100%
+        );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Content */
+    .hero-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 0 60px 64px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-breadcrumb a {
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 0.2s;
+    }
+
+    .hero-breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .hero-breadcrumb .bc-sep {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-title {
+      font-size: 56px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+      line-height: 1.05;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      margin-bottom: 12px;
+    }
+
+    .hero-tagline {
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+      max-width: 520px;
+      margin-bottom: 28px;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .hero-btn {
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .hero-btn-primary {
+      background: #f5a623;
+      color: #fff;
+    }
+
+    .hero-btn-primary:hover {
+      background: #e89518;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(245, 166, 35, 0.3);
+    }
+
+    .hero-btn-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Slide indicators */
+    .hero-indicators {
+      position: absolute;
+      bottom: 28px;
+      right: 60px;
+      z-index: 3;
+      display: flex;
+      gap: 8px;
+    }
+
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
+
+    .hero-dot.active {
+      background: #f5a623;
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* Navigation arrows */
+    .hero-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+
+    .hero:hover .hero-arrow {
+      opacity: 1;
+    }
+
+    .hero-arrow:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .hero-arrow-left { left: 24px; }
+    .hero-arrow-right { right: 24px; }
+
+    /* Country pill in hero */
+    .hero-country {
+      position: absolute;
+      top: 80px;
+      left: 60px;
+      z-index: 2;
+    }
+
+    /* ============================================
+       INTRO SECTION
+       ============================================ */
+
+    .intro {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 64px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .intro-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #1a1a1a;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .intro-subtitle {
+      font-size: 16px;
+      font-weight: 600;
+      color: #f5a623;
+      margin-bottom: 20px;
+    }
+
+    .intro-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .intro-text p {
+      margin-bottom: 16px;
+    }
+
+    .intro-text strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .intro-image {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+
+    @media (max-width: 900px) {
+      .hero { height: 70vh; }
+      .hero-content { padding: 0 24px 48px; }
+      .hero-title { font-size: 38px; }
+      .hero-tagline { font-size: 15px; }
+      .hero-country { left: 24px; }
+      .hero-indicators { right: 24px; }
+      .hero-arrow { display: none; }
+
+      .intro {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero { height: 60vh; min-height: 400px; }
+      .hero-title { font-size: 32px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="rejseoversigt.html">Rejseoversigt</a>
+    <a href="bestil.html">Formular A</a>
+    <a href="formular.html">Formular B</a>
+    <a href="formularx.html">Formular X</a>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <div class="hero">
+
+    <!-- Slides -->
+    <div class="hero-slide active">
+      <img src="Marokko/Sahara-Marokko-KiplingTravel-025.JPG" alt="Sahara, Marokko">
+    </div>
+    <div class="hero-slide">
+      <img src="Marokko/vandrere_atlas.jpg" alt="Vandrere i Atlasbjergene">
+    </div>
+    <div class="hero-slide">
+      <img src="Marokko/Ait-Ben-Haddou-KiplingTravel-web.jpg" alt="Ait Ben Haddou">
+    </div>
+    <div class="hero-slide">
+      <img src="Marokko/Essaouira-Marokko-KiplingTravel.jpg" alt="Essaouira">
+    </div>
+
+    <!-- Country pill -->
+    <div class="hero-country">
+      <div class="pill pill-country">
+        <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg></span>
+        <span class="pill-text">Afrika</span>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <button class="hero-arrow hero-arrow-left" onclick="heroNav(-1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="hero-arrow hero-arrow-right" onclick="heroNav(1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <div class="hero-breadcrumb">
+        <a href="#">Lande</a> <span class="bc-sep">›</span>
+        <a href="#">Afrika</a> <span class="bc-sep">›</span>
+        <span style="color: rgba(255,255,255,0.85);">Marokko</span>
+      </div>
+      <h1 class="hero-title">Marokko</h1>
+      <p class="hero-tagline">1001 nats oplevelse. Atlasbjergene, Sahara og farverige medina-gader. Oplev Marokko med Kipling Travel.</p>
+      <div class="hero-actions">
+        <a href="rejseoversigt.html" class="hero-btn hero-btn-primary">Se alle rejser</a>
+        <a href="formularx.html" class="hero-btn hero-btn-secondary">Skræddersy din rejse</a>
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="hero-indicators">
+      <button class="hero-dot active" onclick="heroGo(0)"></button>
+      <button class="hero-dot" onclick="heroGo(1)"></button>
+      <button class="hero-dot" onclick="heroGo(2)"></button>
+      <button class="hero-dot" onclick="heroGo(3)"></button>
+    </div>
+
+  </div>
+
+  <!-- ============ INTRO ============ -->
+  <section class="intro">
+    <div>
+      <h2 class="intro-title">Rejser til Marokko</h2>
+      <p class="intro-subtitle">Marokkorejser – 1001 nats oplevelse</p>
+      <div class="intro-text">
+        <p>Marokko byder på alsidige ferierejser for enhver smag. Med Atlasbjergene der rejser sig tværs gennem landet, er der gode muligheder for trekkingture og naturligvis bestigning af Nordafrikas højeste bjerg Mt. Toubkal.</p>
+        <p><strong>Vi er eksperter i rejser til Marokko.</strong> Marokko er et smukt og farverigt land med en fascinerende kultur og en meget varieret natur. Vi har stor erfaring med planlægning af rejser til Marokko, og tilbyder mange forskellige typer rejser til det smukke land.</p>
+      </div>
+    </div>
+    <div class="intro-image">
+      <img src="Marokko/Marrakesh.jpg" alt="Marrakesh">
+    </div>
+  </section>
+
+  <!-- ============ SLIDESHOW JS ============ -->
+  <script>
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    let current = 0;
+    let timer;
+
+    function heroGo(i) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      // Reset zoom animation
+      slides[i].querySelector('img').style.animation = 'none';
+      slides[i].querySelector('img').offsetHeight; // reflow
+      slides[i].querySelector('img').style.animation = '';
+
+      current = i;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      resetTimer();
+    }
+
+    function heroNav(dir) {
+      let next = (current + dir + slides.length) % slides.length;
+      heroGo(next);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => heroNav(1), 7000);
+    }
+
+    resetTimer();
+  </script>
+
+</body>
+</html>
