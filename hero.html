@@ -218,6 +218,55 @@
     .hero-arrow-left { left: 24px; }
     .hero-arrow-right { right: 24px; }
 
+    /* Bottom nav bar */
+
+    .hero-nav {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      gap: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 16px 16px 0 0;
+      box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .hero-nav-item {
+      padding: 18px 36px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .hero-nav-item:hover {
+      color: #1a1a1a;
+      background: rgba(245, 166, 35, 0.06);
+    }
+
+    .hero-nav-item.active {
+      color: #1a1a1a;
+    }
+
+    .hero-nav-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      right: 20px;
+      height: 4px;
+      background: #f5a623;
+      border-radius: 4px 4px 0 0;
+    }
+
     /* ============================================
        INTRO SECTION
        ============================================ */
@@ -304,12 +353,6 @@
 </head>
 <body>
 
-  <nav class="site-nav">
-    <a href="rejseoversigt.html">Rejseoversigt</a>
-    <a href="#">Brug for hjælp?</a>
-    <a href="#">Praktisk info</a>
-  </nav>
-
   <!-- ============ HERO ============ -->
   <div class="hero">
 
@@ -362,6 +405,13 @@
       <button class="hero-dot" onclick="heroGo(2)"></button>
       <button class="hero-dot" onclick="heroGo(3)"></button>
     </div>
+
+    <!-- Bottom nav -->
+    <nav class="hero-nav">
+      <a href="rejseoversigt.html" class="hero-nav-item active">Rejseoversigt</a>
+      <a href="#" class="hero-nav-item">Brug for hjælp?</a>
+      <a href="#" class="hero-nav-item">Praktisk info</a>
+    </nav>
 
   </div>
 
