@@ -921,12 +921,12 @@ a {
 }
 
 .btn-next {
-  background: #1a1a1a;
+  background: #f5a623;
   color: #fff;
 }
 
 .btn-next:hover {
-  background: #333;
+  background: #e89518;
 }
 
 .btn-submit {
