@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modtag et rejsetilbud – Kipling Travel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="rejseoversigt.html">Rejseoversigt</a>
+    <a href="bestil.html" class="active">Bestil rejse</a>
+  </nav>
+
+  <div class="form-page">
+
+    <div class="form-header">
+      <h1 class="form-title">Modtag et rejsetilbud</h1>
+      <p class="form-subtitle">Udfyld formularen og vi vender tilbage med rejseprogram og et uforpligtende rejsetilbud.</p>
+      <p class="form-subtitle form-subtitle-small">Er du i tvivl? Kontakt os på <strong>xx xx xx xx</strong> eller skriv til <strong>info@kiplingtravel.dk</strong></p>
+    </div>
+
+    <!-- Trip banner -->
+    <div class="trip-banner">
+      <img src="Marokko/Sahara-Marokko-KiplingTravel-025.JPG" alt="Rejsebillede">
+      <div class="trip-banner-overlay">
+        <span class="trip-banner-title" id="bannerTitle">Marrakech, bjerg og ørken</span>
+        <span class="trip-banner-duration" id="bannerDuration">(8 dages varighed)</span>
+      </div>
+    </div>
+
+    <!-- Formular -->
+    <form class="booking-form" onsubmit="return false;">
+
+      <div class="form-section">
+        <h2 class="section-title">Afrejsedato</h2>
+
+        <div class="form-field">
+          <label class="field-label">Ønsket afrejsedato <span class="req">*</span></label>
+          <input type="date" id="depDate" class="field-input">
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2 class="section-title">Oplysninger</h2>
+
+        <div class="form-field">
+          <label class="field-label">Kontaktperson <span class="req">*</span></label>
+          <input type="text" id="name" class="field-input" placeholder="Fornavn og efternavn">
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label class="field-label">E-mail <span class="req">*</span></label>
+            <input type="email" id="email" class="field-input" placeholder="din@email.dk">
+          </div>
+          <div class="form-field">
+            <label class="field-label">Mobilnummer <span class="req">*</span></label>
+            <input type="tel" id="phone" class="field-input" placeholder="+45 00 00 00 00">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="field-label">Antal personer <span class="req">*</span></label>
+          <div class="select-wrap">
+            <select id="persons" class="field-input field-select">
+              <option value="">Vælg antal</option>
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5</option><option>6</option>
+              <option>7</option><option>8</option><option>9</option><option>10+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="field-label">Evt. anden rejsedato</label>
+          <input type="text" id="altDate" class="field-input" placeholder="Alternativ dato hvis den ønskede ikke passer">
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label class="field-label">Har du rejst med Kipling Travel før?</label>
+            <div class="toggle-group">
+              <label class="toggle-option">
+                <input type="radio" name="returnCustomer" value="ja">
+                <span class="toggle-label">Ja</span>
+              </label>
+              <label class="toggle-option">
+                <input type="radio" name="returnCustomer" value="nej" checked>
+                <span class="toggle-label">Nej</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Hvordan har du hørt om Kipling Travel?</label>
+            <div class="select-wrap">
+              <select id="heardFrom" class="field-input field-select">
+                <option value="">Vælg</option>
+                <option>Google</option>
+                <option>Facebook / Instagram</option>
+                <option>Anbefaling fra ven/familie</option>
+                <option>Rejsemesse</option>
+                <option>Avis/magasin</option>
+                <option>Har rejst med Kipling før</option>
+                <option>Andet</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="checkbox-label">
+            <input type="checkbox" id="newsletter">
+            <span>Ønsker at modtage Kipling Travels nyhedsbrev</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2 class="section-title">Evt. ønsker eller kommentarer</h2>
+
+        <div class="form-field">
+          <textarea id="wishes" class="field-input field-textarea" rows="4" placeholder="Evt. kostønsker, enkeltværelse, andre ønsker..."></textarea>
+        </div>
+      </div>
+
+      <!-- Callback sektion -->
+      <div class="form-section">
+        <div class="callback-box">
+          <div class="callback-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="currentColor"/></svg>
+          </div>
+          <div class="callback-content">
+            <p class="callback-text">For at vi hurtigst muligt kan give dig det bedste tilbud, vil du blive ringet op af <strong>xx xx xx xx</strong> med et skræddersyet tilbud.</p>
+            <div class="form-field">
+              <label class="field-label">Hvornår vil det passe dig bedst?</label>
+              <div class="select-wrap">
+                <select id="callbackTime" class="field-input field-select">
+                  <option value="">Vælg tidspunkt</option>
+                  <option>Formiddag (9–12)</option>
+                  <option>Eftermiddag (12–15)</option>
+                  <option>Sen eftermiddag (15–17)</option>
+                  <option>Aften (17–19)</option>
+                  <option>Ingen præference</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="form-nav">
+        <div></div>
+        <button class="btn btn-next btn-submit" id="btnSubmit">Bestil rejse</button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <script>
+    const btnSubmit = document.getElementById('btnSubmit');
+    btnSubmit.addEventListener('click', () => {
+      btnSubmit.textContent = '✓ Tak – vi kontakter dig snarest';
+      btnSubmit.disabled = true;
+      btnSubmit.classList.add('btn-sent');
+    });
+  </script>
+
+</body>
+</html>
