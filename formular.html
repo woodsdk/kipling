@@ -296,7 +296,7 @@
           </div>
           <div class="callback-content">
             <p class="callback-text">For at vi hurtigst muligt kan give dig det bedste tilbud, vil du blive ringet op af <strong>xx xx xx xx</strong> med et skræddersyet tilbud.</p>
-            <div class="form-field">
+            <div class="form-field" id="callbackTimeField">
               <label class="field-label">Hvornår vil det passe dig bedst?</label>
               <div class="select-wrap">
                 <select id="callbackTime" class="field-input field-select">
@@ -308,6 +308,12 @@
                   <option>Ingen præference</option>
                 </select>
               </div>
+            </div>
+            <div class="form-field">
+              <label class="checkbox-label">
+                <input type="checkbox" id="noCallback" onchange="document.getElementById('callbackTimeField').style.display = this.checked ? 'none' : ''">
+                <span>Jeg ønsker ikke at blive ringet op</span>
+              </label>
             </div>
           </div>
         </div>
