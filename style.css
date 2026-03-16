@@ -1049,3 +1049,122 @@ a {
     gap: 8px;
   }
 }
+
+/* ============================================
+   TILKØB OG OPGRADERING – DROPDOWN
+   ============================================ */
+
+.addon-dropdown {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e8e0d8;
+}
+
+.addon-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 24px;
+  background: #f5a623;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addon-header:hover {
+  background: #e69a1e;
+}
+
+.addon-arrow {
+  transition: transform 0.3s ease;
+}
+
+.addon-dropdown.open .addon-arrow {
+  transform: rotate(180deg);
+}
+
+.addon-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  background: #fff;
+}
+
+.addon-dropdown.open .addon-body {
+  max-height: 600px;
+}
+
+.addon-table {
+  padding: 0 24px;
+}
+
+.addon-table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  padding: 16px 0 12px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.addon-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 1px solid #f0e8e0;
+}
+
+.addon-desc {
+  font-size: 14px;
+  color: #555;
+}
+
+.addon-link {
+  color: #f5a623;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.addon-link:hover {
+  text-decoration: underline;
+}
+
+.addon-price {
+  font-size: 14px;
+  color: #555;
+}
+
+.btn-addon {
+  padding: 10px 28px;
+  background: #f5a623;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-addon:hover {
+  background: #e69a1e;
+}
+
+.btn-addon.selected {
+  background: #4CAF50;
+}
+
+.addon-note {
+  padding: 16px 24px 20px;
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+}

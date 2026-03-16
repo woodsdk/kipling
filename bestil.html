@@ -75,10 +75,6 @@
           </div>
         </div>
 
-        <div class="form-field">
-          <label class="field-label">Evt. anden rejsedato</label>
-          <input type="text" id="altDate" class="field-input" placeholder="Alternativ dato hvis den ønskede ikke passer">
-        </div>
 
         <div class="form-row">
           <div class="form-field">
@@ -124,6 +120,41 @@
 
         <div class="form-field">
           <textarea id="wishes" class="field-input field-textarea" rows="4" placeholder="Evt. kostønsker, enkeltværelse, andre ønsker..."></textarea>
+        </div>
+      </div>
+
+      <!-- Tilkøb og opgradering -->
+      <div class="form-section">
+        <div class="addon-dropdown">
+          <button type="button" class="addon-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>Tilkøb og opgradering</span>
+            <svg class="addon-arrow" viewBox="0 0 24 24" width="20" height="20"><path d="M7 10l5 5 5-5z" fill="currentColor"/></svg>
+          </button>
+          <div class="addon-body">
+            <div class="addon-table">
+              <div class="addon-table-header">
+                <span>Beskrivelse</span>
+                <span>Pris</span>
+                <span></span>
+              </div>
+              <div class="addon-row">
+                <span class="addon-desc">Ballonflyvning over Marrakech <a href="#" class="addon-link">(Læs mere)</a></span>
+                <span class="addon-price">Pris fra 1.798 kr. pr. person</span>
+                <button type="button" class="btn-addon" onclick="this.classList.toggle('selected'); this.textContent = this.classList.contains('selected') ? '✓ Tilvalgt' : 'Tilvælg'">Tilvælg</button>
+              </div>
+              <div class="addon-row">
+                <span class="addon-desc">Tillæg for enkeltværelse <a href="#" class="addon-link">(Læs mere)</a></span>
+                <span class="addon-price">Pris fra 3.798 kr. pr. person</span>
+                <button type="button" class="btn-addon" onclick="this.classList.toggle('selected'); this.textContent = this.classList.contains('selected') ? '✓ Tilvalgt' : 'Tilvælg'">Tilvælg</button>
+              </div>
+              <div class="addon-row">
+                <span class="addon-desc">Hotelopgradering på hele rejsen <a href="#" class="addon-link">(Læs mere)</a></span>
+                <span class="addon-price">Pris fra 2.598 kr. pr. person</span>
+                <button type="button" class="btn-addon" onclick="this.classList.toggle('selected'); this.textContent = this.classList.contains('selected') ? '✓ Tilvalgt' : 'Tilvælg'">Tilvælg</button>
+              </div>
+            </div>
+            <p class="addon-note"><em>Husk at det selvfølgelig er ganske uforpligtende, hvis du ønsker at høre mere om vores tilkøbsmuligheder.</em></p>
+          </div>
         </div>
       </div>
 
