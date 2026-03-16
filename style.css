@@ -1062,6 +1062,28 @@ a {
 }
 
 /* ============================================
+   PERSON ENTRIES (medrejsende)
+   ============================================ */
+
+.person-entry {
+  margin-top: 16px;
+}
+
+.person-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.person-child-label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* ============================================
    TILKØB OG OPGRADERING – DROPDOWN
    ============================================ */
 

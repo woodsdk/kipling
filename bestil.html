@@ -66,15 +66,16 @@
         <div class="form-field">
           <label class="field-label">Antal personer <span class="req">*</span></label>
           <div class="select-wrap">
-            <select id="persons" class="field-input field-select">
-              <option value="">Vælg antal</option>
-              <option>1</option><option>2</option><option>3</option>
-              <option>4</option><option>5</option><option>6</option>
-              <option>7</option><option>8</option><option>9</option><option>10+</option>
+            <select id="persons" class="field-input field-select" onchange="buildPersonFields()">
+              <option value="">Antal personer (fra to personer)</option>
+              <option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option>
+              <option>8</option><option>9</option><option>10+</option>
             </select>
           </div>
         </div>
 
+        <div id="personFields"></div>
 
         <div class="form-row">
           <div class="form-field">
@@ -211,6 +212,28 @@
       btnSubmit.disabled = true;
       btnSubmit.classList.add('btn-sent');
     });
+
+    function buildPersonFields() {
+      const count = parseInt(document.getElementById('persons').value) || 0;
+      const container = document.getElementById('personFields');
+      let html = '';
+      for (let i = 2; i <= Math.min(count, 10); i++) {
+        html += `
+          <div class="person-entry">
+            <div class="person-header">
+              <strong>Person ${i}</strong>
+              <label class="checkbox-label person-child-label">
+                <input type="checkbox" name="child_${i}">
+                <span>Barn</span>
+              </label>
+            </div>
+            <div class="form-field">
+              <input type="text" class="field-input" name="person_${i}" placeholder="Fornavn og efternavn">
+            </div>
+          </div>`;
+      }
+      container.innerHTML = html;
+    }
   </script>
 
 </body>
