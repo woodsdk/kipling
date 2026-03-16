@@ -847,6 +847,17 @@ a {
   letter-spacing: 0.5px;
 }
 
+.callback-checkbox span {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.callback-checkbox strong {
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
 /* --- Summary --- */
 
 .summary {

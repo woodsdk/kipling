@@ -163,23 +163,30 @@
             <svg viewBox="0 0 24 24" width="24" height="24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="currentColor"/></svg>
           </div>
           <div class="callback-content">
-            <p class="callback-text">Jeg ønsker at blive ringet op af <strong>xx xx xx xx</strong> for at høre om rejsen og for at få et skræddersyet tilbud.</p>
-            <div class="form-field" id="callbackTimeField">
-              <label class="field-label">Hvornår vil det passe dig bedst?</label>
-              <div class="select-wrap">
-                <select id="callbackTime" class="field-input field-select">
-                  <option value="">Vælg tidspunkt</option>
-                  <option>Formiddag (9–12)</option>
-                  <option>Eftermiddag (12–15)</option>
-                  <option>Sen eftermiddag (15–17)</option>
-                  <option>Aften (17–19)</option>
-                  <option>Ingen præference</option>
-                </select>
+            <div class="form-field">
+              <label class="checkbox-label callback-checkbox">
+                <input type="checkbox" id="wantCallback" checked onchange="document.getElementById('callbackDetails').style.display = this.checked ? '' : 'none'; document.getElementById('noCallbackField').style.display = this.checked ? 'none' : '';">
+                <span>Jeg ønsker at blive ringet op af <strong>xx xx xx xx</strong> for at høre om rejsen og for at få et skræddersyet tilbud.</span>
+              </label>
+            </div>
+            <div id="callbackDetails">
+              <div class="form-field">
+                <label class="field-label">Hvornår vil det passe dig bedst?</label>
+                <div class="select-wrap">
+                  <select id="callbackTime" class="field-input field-select">
+                    <option value="">Vælg tidspunkt</option>
+                    <option>Formiddag (9–12)</option>
+                    <option>Eftermiddag (12–15)</option>
+                    <option>Sen eftermiddag (15–17)</option>
+                    <option>Aften (17–19)</option>
+                    <option>Ingen præference</option>
+                  </select>
+                </div>
               </div>
             </div>
-            <div class="form-field">
-              <label class="checkbox-label">
-                <input type="checkbox" id="noCallback" onchange="document.getElementById('callbackTimeField').style.display = this.checked ? 'none' : ''">
+            <div class="form-field" id="noCallbackField" style="display: none;">
+              <label class="checkbox-label callback-checkbox">
+                <input type="checkbox" id="noCallback" disabled checked>
                 <span>Jeg ønsker ikke at blive ringet op</span>
               </label>
             </div>
