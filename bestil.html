@@ -183,12 +183,6 @@
                 <span>Jeg ønsker at blive ringet op af <strong>xx xx xx xx</strong> for at høre om rejsen og for at få et skræddersyet tilbud.</span>
               </label>
             </div>
-            <div class="form-field">
-              <label class="checkbox-label callback-checkbox">
-                <input type="radio" name="callbackPref" value="no" onchange="document.getElementById('callbackDetails').style.display = 'none';">
-                <span>Jeg ønsker ikke at blive ringet op</span>
-              </label>
-            </div>
             <div id="callbackDetails">
               <div class="form-field">
                 <label class="field-label">Hvornår vil det passe dig bedst?</label>
@@ -203,6 +197,12 @@
                   </select>
                 </div>
               </div>
+            </div>
+            <div class="form-field">
+              <label class="checkbox-label callback-checkbox">
+                <input type="radio" name="callbackPref" value="no" onchange="document.getElementById('callbackDetails').style.display = 'none';">
+                <span>Jeg ønsker ikke at blive ringet op</span>
+              </label>
             </div>
           </div>
         </div>
