@@ -1055,9 +1055,10 @@ a {
    ============================================ */
 
 .addon-dropdown {
-  border-radius: 12px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   overflow: hidden;
-  border: 1px solid #e8e0d8;
 }
 
 .addon-header {
@@ -1065,11 +1066,12 @@ a {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 16px 24px;
+  padding: 18px 32px;
   background: #f5a623;
   color: #fff;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
+  letter-spacing: -0.2px;
   border: none;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -1081,6 +1083,7 @@ a {
 
 .addon-arrow {
   transition: transform 0.3s ease;
+  opacity: 0.85;
 }
 
 .addon-dropdown.open .addon-arrow {
@@ -1091,7 +1094,6 @@ a {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
-  background: #fff;
 }
 
 .addon-dropdown.open .addon-body {
@@ -1099,35 +1101,38 @@ a {
 }
 
 .addon-table {
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 .addon-table-header {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 16px;
-  padding: 16px 0 12px;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 20px;
+  padding: 20px 0 14px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .addon-row {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 16px;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 20px;
   align-items: center;
-  padding: 16px 0;
-  border-top: 1px solid #f0e8e0;
+  padding: 18px 0;
+  border-top: 1px solid #f0ebe4;
 }
 
 .addon-desc {
   font-size: 14px;
-  color: #555;
+  color: #444;
+  line-height: 1.4;
 }
 
 .addon-link {
-  color: #f5a623;
+  color: #c8891c;
   text-decoration: none;
   font-size: 13px;
 }
@@ -1138,7 +1143,7 @@ a {
 
 .addon-price {
   font-size: 14px;
-  color: #555;
+  color: #777;
 }
 
 .btn-addon {
@@ -1156,15 +1161,17 @@ a {
 
 .btn-addon:hover {
   background: #e69a1e;
+  transform: translateY(-1px);
 }
 
 .btn-addon.selected {
-  background: #4CAF50;
+  background: #4a9e5c;
 }
 
 .addon-note {
-  padding: 16px 24px 20px;
+  padding: 18px 32px 24px;
   font-size: 13px;
-  color: #999;
+  color: #aaa;
   text-align: center;
+  line-height: 1.5;
 }
