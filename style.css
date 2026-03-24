@@ -265,6 +265,10 @@ a {
 .pill-award-b .pill-icon-award { background: #F8CB58 !important; }
 .pill-award-b .award-bars i { background: #F8CB58; }
 
+/* A-rating variant (easiest, green) */
+.pill-award-a .pill-icon-award { background: #7BC67E !important; }
+.pill-award-a .award-bars i { background: #7BC67E; }
+
 /* ============================================
    PILL BUTTONS
    ============================================ */
