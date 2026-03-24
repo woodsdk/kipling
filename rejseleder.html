@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henrik Egede-Lassen – Rejseleder | Kipling Travel</title>
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+
+    /* ============ HERO ============ */
+
+    .rl-hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 60px 60px 48px;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .rl-hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .rl-subtitle {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f5a623;
+    }
+
+    .rl-name {
+      font-size: 48px;
+      font-weight: 800;
+      color: #1a1a1a;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .rl-tagline {
+      font-size: 15px;
+      color: #777;
+      font-style: italic;
+      margin: 4px 0 16px;
+    }
+
+    .rl-quote {
+      font-size: 20px;
+      font-style: italic;
+      color: #555;
+      line-height: 1.5;
+      border-left: 3px solid #f5a623;
+      padding-left: 20px;
+      margin: 8px 0 20px;
+    }
+
+    .rl-contact-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .rl-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .rl-contact-btn.email {
+      background: rgba(245, 166, 35, 0.1);
+      color: #f5a623;
+    }
+
+    .rl-contact-btn.email:hover {
+      background: rgba(245, 166, 35, 0.2);
+    }
+
+    .rl-contact-btn.linkedin {
+      background: #0077b5;
+      color: #fff;
+    }
+
+    .rl-contact-btn.linkedin:hover {
+      background: #005f8d;
+    }
+
+    .rl-hero-image {
+      position: relative;
+    }
+
+    .rl-hero-image img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .rl-hero-image::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border: 2px solid rgba(245, 166, 35, 0.2);
+      border-radius: 30px;
+      pointer-events: none;
+    }
+
+    /* ============ SECTIONS ============ */
+
+    .rl-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 48px 60px;
+    }
+
+    .rl-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #f5a623;
+      margin: 0 0 24px;
+    }
+
+    .rl-divider {
+      width: 48px;
+      height: 3px;
+      background: #f5a623;
+      border-radius: 2px;
+      margin-bottom: 32px;
+    }
+
+    /* ============ OM ============ */
+
+    .rl-bio {
+      max-width: 820px;
+    }
+
+    .rl-bio p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+      margin: 0 0 16px;
+    }
+
+    /* ============ SPECIALER ============ */
+
+    .rl-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .rl-tag {
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      background: rgba(245, 166, 35, 0.08);
+      color: #c88a1a;
+      border: 1px solid rgba(245, 166, 35, 0.2);
+    }
+
+    /* ============ KVALIFIKATIONER ============ */
+
+    .rl-quals {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 820px;
+    }
+
+    .rl-qual {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .rl-qual strong {
+      color: #1a1a1a;
+    }
+
+    .rl-qual a {
+      color: #f5a623;
+      text-decoration: none;
+    }
+
+    .rl-qual a:hover {
+      text-decoration: underline;
+    }
+
+    /* ============ BOGER ============ */
+
+    .rl-books {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-width: 820px;
+    }
+
+    .rl-books-intro {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+      margin: 0;
+    }
+
+    .rl-book {
+      padding: 28px 32px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      border-left: 4px solid #f5a623;
+    }
+
+    .rl-book-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+
+    .rl-book-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+      margin: 0 0 12px;
+    }
+
+    .rl-book-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f5a623;
+      text-decoration: none;
+    }
+
+    .rl-book-link:hover {
+      text-decoration: underline;
+    }
+
+    .rl-book-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(245, 166, 35, 0.12);
+      color: #f5a623;
+      margin-bottom: 8px;
+    }
+
+    /* ============ DESTINATIONER ============ */
+
+    .rl-destinations {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rl-dest {
+      padding: 28px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+    }
+
+    .rl-dest:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .rl-dest h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+
+    .rl-dest p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #666;
+      margin: 0;
+    }
+
+    /* ============ KARRIERE TIMELINE ============ */
+
+    .rl-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 820px;
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .rl-timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: rgba(245, 166, 35, 0.25);
+    }
+
+    .rl-tl-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 20px;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    .rl-tl-item::before {
+      content: '';
+      position: absolute;
+      left: -29px;
+      top: 28px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #f5a623;
+      border: 3px solid #faf5eb;
+    }
+
+    .rl-tl-year {
+      font-size: 18px;
+      font-weight: 800;
+      color: #f5a623;
+    }
+
+    .rl-tl-desc {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* ============ KOMMENDE REJSER ============ */
+
+    .rl-trips {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rl-trip {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+    }
+
+    .rl-trip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .rl-trip-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .rl-trip-body {
+      padding: 24px;
+    }
+
+    .rl-trip-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+
+    .rl-trip-meta {
+      font-size: 14px;
+      color: #888;
+      margin: 0 0 12px;
+    }
+
+    .rl-trip-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: #f5a623;
+    }
+
+    /* ============ ALTERNATING BACKGROUNDS ============ */
+
+    .rl-section.alt {
+      background: #fff;
+      padding-top: 48px;
+      padding-bottom: 48px;
+      max-width: 100%;
+    }
+
+    .rl-section.alt > * {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    .rl-section.alt > .rl-section-title,
+    .rl-section.alt > .rl-divider {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="rejseoversigt.html">Rejseoversigt</a>
+    <a href="bestil.html">Formular A</a>
+    <a href="formular.html">Formular B</a>
+    <a href="formularx.html">Formular X</a>
+    <a href="rejseleder.html" class="active">Rejseleder</a>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <div class="rl-hero">
+    <div class="rl-hero-text">
+      <span class="rl-subtitle">Rejseleder & Naturfotograf</span>
+      <h1 class="rl-name">Henrik Egede-Lassen</h1>
+      <p class="rl-tagline">Naturfotograf, safarileder, forfatter, dykker & filmproducent</p>
+      <blockquote class="rl-quote">"Hvis jeg overlever det her &ndash; bliver det en god historie"</blockquote>
+      <div class="rl-contact-row">
+        <a href="mailto:info@kiplingtravel.dk" class="rl-contact-btn email">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
+          info@kiplingtravel.dk
+        </a>
+        <a href="#" class="rl-contact-btn linkedin">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" fill="currentColor"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="rl-hero-image">
+      <img src="Marokko/Rejsebilleder/henrik-hero.jpg" alt="Henrik Egede-Lassen" onerror="this.style.background='linear-gradient(135deg, #f5a623 0%, #e8941a 100%)'; this.style.display='block';">
+    </div>
+  </div>
+
+  <!-- ============ OM ============ -->
+  <div class="rl-section">
+    <h2 class="rl-section-title">Om Henrik Egede-Lassen</h2>
+    <div class="rl-divider"></div>
+    <div class="rl-bio">
+      <p>Henrik Egede-Lassen er naturfotograf, safarileder, forfatter, dykker og filmproducent &mdash; samt medlem af Eventyrernes Klub. Allerede som barn drømte han om at komme ud i verden, dykke med hajer og møde fjerne folkeslag. Mens vennerne fik uddannelse og familie, forsøgte Henrik at leve af sin eventyrlyst. Som 26-årig kom han for alvor i gang med sit voksenliv, da han i 1991 grundlagde Albatros Adventure afdelingen.</p>
+      <p>Efter nogle formative år i rejsebranchen og utallige ekspeditioner til alle syv kontinenter etablerede han i 2001 naturformidlingsbureauet Zoomedia, som bl.a. har lavet opgaver for National Geographic, BBC, NOVA og Warner Bros. Han har desuden været vært på flere rejseprogrammer på TV.</p>
+    </div>
+  </div>
+
+  <!-- ============ SPECIALER ============ -->
+  <div class="rl-section alt">
+    <h2 class="rl-section-title">Specialer & Kompetencer</h2>
+    <div class="rl-divider"></div>
+    <div class="rl-tags">
+      <span class="rl-tag">Naturfotografi</span>
+      <span class="rl-tag">Safari & Wildlife</span>
+      <span class="rl-tag">Borneo</span>
+      <span class="rl-tag">Afrika</span>
+      <span class="rl-tag">Nepal</span>
+      <span class="rl-tag">Foredragsholder</span>
+      <span class="rl-tag">Filmproduktion</span>
+      <span class="rl-tag">National Geographic</span>
+      <span class="rl-tag">BBC</span>
+      <span class="rl-tag">Ekspeditionsleder</span>
+      <span class="rl-tag">Dykker</span>
+      <span class="rl-tag">Alle 7 kontinenter</span>
+    </div>
+  </div>
+
+  <!-- ============ KVALIFIKATIONER ============ -->
+  <div class="rl-section">
+    <h2 class="rl-section-title">Uddannelse & Kvalifikationer</h2>
+    <div class="rl-divider"></div>
+    <div class="rl-quals">
+      <p class="rl-qual">Medgrundlægger, <strong>Albatros Adventure</strong> (1991) &mdash; en af Danmarks største eventyrrejsebureauer.</p>
+      <p class="rl-qual">Stifter, <strong>Zoomedia</strong> (2001) &mdash; naturformidlingsbureau med opgaver for National Geographic, BBC, NOVA og Warner Bros.</p>
+      <p class="rl-qual">Medlem af <strong>Eventyrernes Klub</strong> (optaget 2020) &mdash; <a href="https://adventurersclub.dk" target="_blank">adventurersclub.dk</a></p>
+    </div>
+  </div>
+
+  <!-- ============ BOGER ============ -->
+  <div class="rl-section alt">
+    <h2 class="rl-section-title">Bøger af Henrik Egede-Lassen</h2>
+    <div class="rl-divider"></div>
+    <div class="rl-books">
+      <p class="rl-books-intro">Henrik har dokumenteret sine år med eventyr og naturformidling i bogform. Bøgerne vidner om en mand med usædvanlig erfaring fra verdens vildeste hjørner og styrker troværdigheden som rejseleder og naturformidler.</p>
+
+      <div class="rl-book">
+        <h3 class="rl-book-title">"Hvis jeg overlever det her &ndash; bliver det en god historie" (2019)</h3>
+        <p class="rl-book-desc">Selvbiografisk beretning om ekspeditioner, naturformidling og eventyrlivet. Henriks første bog om et liv uden for det almindelige.</p>
+        <a href="#" class="rl-book-link">Se bogen på kiplingtravel.dk &rarr;</a>
+      </div>
+
+      <div class="rl-book">
+        <span class="rl-book-badge">Udkommer snart</span>
+        <h3 class="rl-book-title">"Ufokuseret overmod &ndash; vanvittige historier fra en smuk planet"</h3>
+        <p class="rl-book-desc">Fortsættelsen med forord af Andreas Mogensen. En samling af Henriks mest vanvittige oplevelser fra jordens hjørner.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DESTINATIONER ============ -->
+  <div class="rl-section">
+    <h2 class="rl-section-title">Henriks Foretrukne Destinationer</h2>
+    <div class="rl-divider"></div>
+    <p style="font-size: 16px; line-height: 1.8; color: #444; margin: 0 0 28px; max-width: 820px;">Med ekspeditioner til alle syv kontinenter er der få steder på kloden Henrik ikke kender. Men der er destinationer der har en særlig plads &mdash; steder han vender tilbage til igen og igen, og som han leder rejser til med Kipling Travel.</p>
+    <div class="rl-destinations">
+      <div class="rl-dest">
+        <h3>Tanzania & Zanzibar</h3>
+        <p>Serengeti, Ngorongoro-krateret og Hadza-folket ved Lake Eyasi. Afrikas vildeste wildlife-sceneri.</p>
+      </div>
+      <div class="rl-dest">
+        <h3>Kenya</h3>
+        <p>Den store gnu-migration og Maasai Mara. Et safari-mekka Henrik kender i detaljer.</p>
+      </div>
+      <div class="rl-dest">
+        <h3>Nepal</h3>
+        <p>Himalayaens trekkingruter og kulturelle rigdom. Henrik har ledt adskillige Nepal-ekspeditioner.</p>
+      </div>
+      <div class="rl-dest">
+        <h3>Borneo</h3>
+        <p>Det vilde Sarawak, ibanfolket i junglen og orangutanger i Bako National Park.</p>
+      </div>
+      <div class="rl-dest">
+        <h3>Indien</h3>
+        <p>Fra tigre i nationalparker til krydderimarkederne i Rajasthan. Et kontinent i sig selv.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ KARRIERE ============ -->
+  <div class="rl-section alt">
+    <h2 class="rl-section-title">Karriere</h2>
+    <div class="rl-divider"></div>
+    <div class="rl-timeline">
+      <div class="rl-tl-item">
+        <span class="rl-tl-year">1991</span>
+        <span class="rl-tl-desc">Medgrundlægger af Albatros Adventure &mdash; ekspeditioner til alle 7 kontinenter</span>
+      </div>
+      <div class="rl-tl-item">
+        <span class="rl-tl-year">2001</span>
+        <span class="rl-tl-desc">Stifter Zoomedia &mdash; naturfotograf og filmproducent for National Geographic, BBC, NOVA og Warner Bros.</span>
+      </div>
+      <div class="rl-tl-item">
+        <span class="rl-tl-year">2019</span>
+        <span class="rl-tl-desc">Udgiver "Hvis jeg overlever det her &ndash; bliver det en god historie"</span>
+      </div>
+      <div class="rl-tl-item">
+        <span class="rl-tl-year">2020</span>
+        <span class="rl-tl-desc">Optaget i Eventyrernes Klub</span>
+      </div>
+      <div class="rl-tl-item">
+        <span class="rl-tl-year">Nu</span>
+        <span class="rl-tl-desc">Rejseleder hos Kipling Travel med speciale i safari og wildlife-rejser</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ KOMMENDE REJSER ============ -->
+  <div class="rl-section">
+    <h2 class="rl-section-title">Kommende Rejser med Henrik Egede-Lassen</h2>
+    <div class="rl-divider"></div>
+    <div class="rl-trips">
+      <div class="rl-trip">
+        <img src="Marokko/Rejsebilleder/borneo.jpg" alt="Borneo" class="rl-trip-img" onerror="this.style.background='linear-gradient(135deg,#2d5016,#4a7c23)'; this.style.display='block'; this.style.height='200px';">
+        <div class="rl-trip-body">
+          <h3 class="rl-trip-title">Fotosafari i Sarawak på Borneo</h3>
+          <p class="rl-trip-meta">10 dage</p>
+          <span class="rl-trip-price">kr. 23.998,-</span>
+        </div>
+      </div>
+      <div class="rl-trip">
+        <img src="Marokko/Rejsebilleder/srilanka.jpg" alt="Sri Lanka" class="rl-trip-img" onerror="this.style.background='linear-gradient(135deg,#1a6b4a,#2d9960)'; this.style.display='block'; this.style.height='200px';">
+        <div class="rl-trip-body">
+          <h3 class="rl-trip-title">Fotosafari til det ukendte Sri Lanka</h3>
+          <p class="rl-trip-meta">10 dage</p>
+          <span class="rl-trip-price">kr. 22.998,-</span>
+        </div>
+      </div>
+      <div class="rl-trip">
+        <img src="Marokko/Rejsebilleder/nepal.jpg" alt="Nepal" class="rl-trip-img" onerror="this.style.background='linear-gradient(135deg,#4a6fa5,#6b8fc5)'; this.style.display='block'; this.style.height='200px';">
+        <div class="rl-trip-body">
+          <h3 class="rl-trip-title">Nepal safari med dansk rejseleder</h3>
+          <p class="rl-trip-meta">11 dage</p>
+          <span class="rl-trip-price">kr. 27.998,-</span>
+        </div>
+      </div>
+      <div class="rl-trip">
+        <img src="Marokko/Rejsebilleder/tanzania.jpg" alt="Tanzania" class="rl-trip-img" onerror="this.style.background='linear-gradient(135deg,#c88a1a,#e8a832)'; this.style.display='block'; this.style.height='200px';">
+        <div class="rl-trip-body">
+          <h3 class="rl-trip-title">Tanzania safari med dansk rejseleder</h3>
+          <p class="rl-trip-meta">11 dage</p>
+          <span class="rl-trip-price">kr. 29.798,-</span>
+        </div>
+      </div>
+      <div class="rl-trip">
+        <img src="Marokko/Rejsebilleder/sneleopard.jpg" alt="Sneleopardens rige" class="rl-trip-img" onerror="this.style.background='linear-gradient(135deg,#5a5a7a,#8a8aaa)'; this.style.display='block'; this.style.height='200px';">
+        <div class="rl-trip-body">
+          <h3 class="rl-trip-title">Sneleopardens rige</h3>
+          <p class="rl-trip-meta">11 dage</p>
+          <span class="rl-trip-price">kr. 28.998,-</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
