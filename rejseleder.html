@@ -359,57 +359,43 @@
     /* ============ KARRIERE TIMELINE ============ */
 
     .rl-timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      max-width: 820px;
-      position: relative;
-      padding: 32px 40px 32px 64px;
       background: #fff;
-      border-radius: 16px;
+      border-radius: 8px;
       box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
     }
 
-    .rl-timeline::before {
-      content: '';
-      position: absolute;
-      left: 38px;
-      top: 40px;
-      bottom: 40px;
-      width: 2px;
-      background: rgba(245, 166, 35, 0.25);
+    .rl-timeline .rl-tl-header {
+      font-size: 22px;
+      font-weight: 700;
+      color: #000;
+      padding: 32px 40px 24px;
     }
 
     .rl-tl-item {
       display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 20px;
-      padding: 20px 0;
-      position: relative;
+      grid-template-columns: 100px 1fr;
+      align-items: center;
+      padding: 20px 40px;
+      border-top: 1px solid #f0ebe3;
+      transition: background 0.2s ease;
     }
 
-    .rl-tl-item::before {
-      content: '';
-      position: absolute;
-      left: -32px;
-      top: 28px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #f5a623;
-      border: 3px solid #fff;
+    .rl-tl-item:hover {
+      background: #faf7f2;
     }
 
     .rl-tl-year {
-      font-size: 18px;
-      font-weight: 800;
+      font-size: 15px;
+      font-weight: 700;
       color: #f5a623;
+      letter-spacing: 0.5px;
     }
 
     .rl-tl-desc {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #444;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
     }
 
     /* ============ KOMMENDE REJSER ============ */
@@ -635,8 +621,8 @@
 
   <!-- ============ KARRIERE ============ -->
   <div class="rl-section alt">
-    <h2 class="rl-section-title">Karriere</h2>
     <div class="rl-timeline">
+      <h2 class="rl-tl-header">Karriere</h2>
       <div class="rl-tl-item">
         <span class="rl-tl-year">1991</span>
         <span class="rl-tl-desc">Medgrundlægger af Albatros Adventure &mdash; ekspeditioner til alle 7 kontinenter</span>
