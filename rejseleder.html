@@ -10,42 +10,44 @@
     /* ============ HERO ============ */
 
     .rl-hero {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 60px 60px 48px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: center;
+      min-height: 600px;
     }
 
     .rl-hero-text {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 56px;
+      gap: 8px;
     }
 
     .rl-subtitle {
       font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #f5a623;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #999;
+      margin: 4px 0 0;
     }
 
     .rl-name {
-      font-size: 48px;
-      font-weight: 800;
+      font-size: 42px;
+      font-weight: 300;
       color: #1a1a1a;
-      line-height: 1.1;
+      line-height: 1.2;
       margin: 0;
+      letter-spacing: -0.5px;
     }
 
     .rl-tagline {
       font-size: 15px;
       color: #777;
       font-style: italic;
-      margin: 4px 0 16px;
+      margin: 4px 0 0;
+      display: none;
     }
 
     .rl-quote {
@@ -53,15 +55,72 @@
       font-style: italic;
       color: #555;
       line-height: 1.5;
-      border-left: 3px solid #f5a623;
-      padding-left: 20px;
+      border-left: none;
+      padding-left: 0;
       margin: 8px 0 20px;
+      display: none;
+    }
+
+    .rl-bio-hero {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+      margin: 16px 0 0;
+    }
+
+    .rl-bio-hero a {
+      color: #f5a623;
+      text-decoration: none;
+    }
+
+    .rl-bio-hero a:hover {
+      text-decoration: underline;
+    }
+
+    .rl-books-hero {
+      margin-top: 20px;
+    }
+
+    .rl-books-hero-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+
+    .rl-books-hero-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+      margin: 0;
+    }
+
+    .rl-books-hero-text em {
+      color: #444;
+    }
+
+    .rl-books-hero-text a {
+      color: #f5a623;
+      text-decoration: none;
+    }
+
+    .rl-books-hero-text a:hover {
+      text-decoration: underline;
+    }
+
+    .rl-hero-divider {
+      width: 60px;
+      height: 4px;
+      background: #f5a623;
+      border-radius: 2px;
+      margin: 24px auto 0;
     }
 
     .rl-contact-row {
       display: flex;
       gap: 12px;
-      margin-top: 8px;
+      margin-top: 16px;
+      justify-content: center;
     }
 
     .rl-contact-btn {
@@ -96,23 +155,13 @@
 
     .rl-hero-image {
       position: relative;
+      overflow: hidden;
     }
 
     .rl-hero-image img {
       width: 100%;
-      aspect-ratio: 4 / 5;
+      height: 100%;
       object-fit: cover;
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-    }
-
-    .rl-hero-image::after {
-      content: '';
-      position: absolute;
-      inset: -8px;
-      border: 2px solid rgba(245, 166, 35, 0.2);
-      border-radius: 30px;
-      pointer-events: none;
     }
 
     /* ============ SECTIONS ============ */
@@ -435,10 +484,21 @@
   <!-- ============ HERO ============ -->
   <div class="rl-hero">
     <div class="rl-hero-text">
-      <span class="rl-subtitle">Rejseleder & Naturfotograf</span>
       <h1 class="rl-name">Henrik Egede-Lassen</h1>
-      <p class="rl-tagline">Naturfotograf, safarileder, forfatter, dykker & filmproducent</p>
-      <blockquote class="rl-quote">"Hvis jeg overlever det her &ndash; bliver det en god historie"</blockquote>
+      <span class="rl-subtitle">Rejseleder</span>
+
+      <p class="rl-bio-hero">Henrik Egede-Lassen er naturfotograf, safarileder, forfatter, dykker og filmproducent &ndash; samt medlem af <a href="https://adventurersclub.dk" target="_blank">Eventyrernes Klub</a>. Allerede som barn drømte han om at komme ud i verden, dykke med hajer og møde fjerne folkeslag. Mens vennerne fik uddannelse og familie, forsøgte Henrik at leve af sin eventyrlyst. Som 26-årig kom han for alvor i gang med sit voksenliv, da han i 1991 grundlagde Albatros Adventure afdelingen.</p>
+
+      <p class="rl-bio-hero">Efter nogle formative år i rejsebranchen og utallige ekspeditioner til alle syv kontinenter etablerede han i 2001 naturformidlingsbureauet Zoomedia, som bl.a. har løst opgaver for National Geographic, BBC, NOVA, Warner Bros. m.fl. Henrik har desuden været vært på flere rejseprogrammer på TV, bl.a. <a href="#">Vilde Verden på DR1</a>.</p>
+
+      <div class="rl-books-hero">
+        <p class="rl-books-hero-title">Bøger af Henrik Egede-Lassen:</p>
+        <p class="rl-books-hero-text">Henrik har også skrevet den prisvindende bog <em>"Hvis jeg overlever det her &ndash; bliver det en god historie"</em> <a href="#">Hvis jeg overlever det her &ndash; bliver det en god historie</a></p>
+        <p class="rl-books-hero-text">Og udkommer snart med fortsættelsen <em>"Ufokuseret overmod &ndash; vanvittige historier fra en smuk planet"</em> med forord af Andreas Mogensen.</p>
+      </div>
+
+      <div class="rl-hero-divider"></div>
+
       <div class="rl-contact-row">
         <a href="mailto:info@kiplingtravel.dk" class="rl-contact-btn email">
           <svg viewBox="0 0 24 24" width="16" height="16"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
@@ -451,17 +511,7 @@
       </div>
     </div>
     <div class="rl-hero-image">
-      <img src="Billeder/Rejseleder/Henrik.jpg" alt="Henrik Egede-Lassen" onerror="this.style.background='linear-gradient(135deg, #f5a623 0%, #e8941a 100%)'; this.style.display='block';">
-    </div>
-  </div>
-
-  <!-- ============ OM ============ -->
-  <div class="rl-section">
-    <h2 class="rl-section-title">Om Henrik Egede-Lassen</h2>
-    <div class="rl-divider"></div>
-    <div class="rl-bio">
-      <p>Henrik Egede-Lassen er naturfotograf, safarileder, forfatter, dykker og filmproducent &mdash; samt medlem af Eventyrernes Klub. Allerede som barn drømte han om at komme ud i verden, dykke med hajer og møde fjerne folkeslag. Mens vennerne fik uddannelse og familie, forsøgte Henrik at leve af sin eventyrlyst. Som 26-årig kom han for alvor i gang med sit voksenliv, da han i 1991 grundlagde Albatros Adventure afdelingen.</p>
-      <p>Efter nogle formative år i rejsebranchen og utallige ekspeditioner til alle syv kontinenter etablerede han i 2001 naturformidlingsbureauet Zoomedia, som bl.a. har lavet opgaver for National Geographic, BBC, NOVA og Warner Bros. Han har desuden været vært på flere rejseprogrammer på TV.</p>
+      <img src="Billeder/Rejseleder/Henrik.jpg" alt="Henrik Egede-Lassen">
     </div>
   </div>
 
