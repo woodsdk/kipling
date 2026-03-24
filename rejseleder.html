@@ -479,23 +479,18 @@
     }
 
     .rl-testimonial-track {
-      display: flex;
-      transition: transform 0.5s ease;
+      position: relative;
     }
 
     .rl-testimonial {
       text-align: center;
       padding: 0 40px;
-      width: 900px;
-      flex: 0 0 900px;
       box-sizing: border-box;
+      transition: opacity 0.5s ease;
     }
 
-    @media (max-width: 960px) {
-      .rl-testimonial {
-        width: 100vw;
-        flex: 0 0 100vw;
-      }
+    .rl-testimonial.hidden {
+      display: none;
     }
 
     .rl-testimonial-dots {
@@ -869,12 +864,15 @@
     </div>
   </div>
   <script>
+    const testimonials = document.querySelectorAll('.rl-testimonial');
+    const dots = document.querySelectorAll('.rl-testimonial-dot');
     function goTestimonial(i) {
-      document.getElementById('testimonialTrack').style.transform = 'translateX(-' + (i * 100) + '%)';
-      document.querySelectorAll('.rl-testimonial-dot').forEach((d, idx) => d.classList.toggle('active', idx === i));
+      testimonials.forEach((t, idx) => t.classList.toggle('hidden', idx !== i));
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
     }
+    goTestimonial(0);
     let tIdx = 0;
-    setInterval(() => { tIdx = (tIdx + 1) % 2; goTestimonial(tIdx); }, 6000);
+    setInterval(() => { tIdx = (tIdx + 1) % testimonials.length; goTestimonial(tIdx); }, 6000);
   </script>
 
   <!-- ============ KARRIERE ============ -->
