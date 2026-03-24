@@ -472,16 +472,44 @@
     }
 
     .rl-testimonials-inner {
-      max-width: 1280px;
+      max-width: 700px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rl-testimonial-track {
+      display: flex;
+      transition: transform 0.5s ease;
     }
 
     .rl-testimonial {
       text-align: center;
       padding: 0 24px;
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+
+    .rl-testimonial-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .rl-testimonial-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      padding: 0;
+    }
+
+    .rl-testimonial-dot.active {
+      background: #f5a623;
     }
 
     .rl-quote-icon {
@@ -808,22 +836,36 @@
   <!-- ============ KUNDEUDTALELSER ============ -->
   <div class="rl-testimonials">
     <div class="rl-testimonials-inner">
-      <div class="rl-testimonial">
-        <div class="rl-quote-icon">&rdquo;</div>
-        <blockquote class="rl-quote-text">Som altid en forrygende rejse med Kipling. Vi var på den store kulturrejse i Marokko, og det var intet mindre end fantastisk. Alt klappede bare som det skulle. Hoteller, riads mm var helt perfekt.</blockquote>
-        <p class="rl-quote-author">- Connie</p>
-        <p class="rl-quote-trip">Marokko</p>
-        <a href="https://www.kiplingtravel.dk/evalueringer" class="rl-quote-link">Læs hele anmeldelsen <u>her</u></a>
+      <div class="rl-testimonial-track" id="testimonialTrack">
+        <div class="rl-testimonial">
+          <div class="rl-quote-icon">&rdquo;</div>
+          <blockquote class="rl-quote-text">Som altid en forrygende rejse med Kipling. Vi var på den store kulturrejse i Marokko, og det var intet mindre end fantastisk. Alt klappede bare som det skulle. Hoteller, riads mm var helt perfekt.</blockquote>
+          <p class="rl-quote-author">- Connie</p>
+          <p class="rl-quote-trip">Marokko</p>
+          <a href="https://www.kiplingtravel.dk/evalueringer" class="rl-quote-link">Læs hele anmeldelsen <u>her</u></a>
+        </div>
+        <div class="rl-testimonial">
+          <div class="rl-quote-icon">&rdquo;</div>
+          <blockquote class="rl-quote-text">En helt fantastisk tur til Tanzania med Henrik som rejseleder. Hans viden om dyrelivet og naturen er enestående, og han formår at skabe en uforglemmelig oplevelse for alle.</blockquote>
+          <p class="rl-quote-author">- Jens &amp; Mette</p>
+          <p class="rl-quote-trip">Tanzania</p>
+          <a href="https://www.kiplingtravel.dk/evalueringer" class="rl-quote-link">Læs hele anmeldelsen <u>her</u></a>
+        </div>
       </div>
-      <div class="rl-testimonial">
-        <div class="rl-quote-icon">&rdquo;</div>
-        <blockquote class="rl-quote-text">En helt fantastisk tur til Tanzania med Henrik som rejseleder. Hans viden om dyrelivet og naturen er enestående, og han formår at skabe en uforglemmelig oplevelse for alle.</blockquote>
-        <p class="rl-quote-author">- Jens & Mette</p>
-        <p class="rl-quote-trip">Tanzania</p>
-        <a href="https://www.kiplingtravel.dk/evalueringer" class="rl-quote-link">Læs hele anmeldelsen <u>her</u></a>
+      <div class="rl-testimonial-dots">
+        <button class="rl-testimonial-dot active" onclick="goTestimonial(0)"></button>
+        <button class="rl-testimonial-dot" onclick="goTestimonial(1)"></button>
       </div>
     </div>
   </div>
+  <script>
+    function goTestimonial(i) {
+      document.getElementById('testimonialTrack').style.transform = 'translateX(-' + (i * 100) + '%)';
+      document.querySelectorAll('.rl-testimonial-dot').forEach((d, idx) => d.classList.toggle('active', idx === i));
+    }
+    let tIdx = 0;
+    setInterval(() => { tIdx = (tIdx + 1) % 2; goTestimonial(tIdx); }, 6000);
+  </script>
 
   <!-- ============ KARRIERE ============ -->
   <div class="rl-section">
