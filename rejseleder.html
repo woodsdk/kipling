@@ -472,25 +472,23 @@
     }
 
     .rl-testimonials-inner {
-      max-width: 900px;
+      max-width: 750px;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
     }
 
     .rl-testimonial-track {
-      position: relative;
+      display: flex;
+      transition: transform 0.6s ease;
     }
 
     .rl-testimonial {
       text-align: center;
-      padding: 0 40px;
+      padding: 0 60px;
       box-sizing: border-box;
-      transition: opacity 0.5s ease;
-    }
-
-    .rl-testimonial.hidden {
-      display: none;
+      min-width: 100%;
+      width: 100%;
     }
 
     .rl-testimonial-dots {
@@ -864,15 +862,15 @@
     </div>
   </div>
   <script>
-    const testimonials = document.querySelectorAll('.rl-testimonial');
-    const dots = document.querySelectorAll('.rl-testimonial-dot');
+    const tTrack = document.getElementById('testimonialTrack');
+    const tDots = document.querySelectorAll('.rl-testimonial-dot');
+    const tTotal = tDots.length;
     function goTestimonial(i) {
-      testimonials.forEach((t, idx) => t.classList.toggle('hidden', idx !== i));
-      dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+      tTrack.style.transform = 'translateX(-' + (i * 100) + '%)';
+      tDots.forEach((d, idx) => d.classList.toggle('active', idx === i));
     }
-    goTestimonial(0);
     let tIdx = 0;
-    setInterval(() => { tIdx = (tIdx + 1) % testimonials.length; goTestimonial(tIdx); }, 6000);
+    setInterval(() => { tIdx = (tIdx + 1) % tTotal; goTestimonial(tIdx); }, 6000);
   </script>
 
   <!-- ============ KARRIERE ============ -->
