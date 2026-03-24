@@ -12,9 +12,8 @@
     .rl-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      max-width: 1280px;
-      margin: 0 auto;
       min-height: 600px;
+      background: #fff;
     }
 
     .rl-hero-text {
@@ -23,9 +22,8 @@
       align-items: flex-start;
       justify-content: center;
       text-align: left;
-      padding: 60px 60px;
+      padding: 60px 56px 60px calc(max(60px, (100vw - 1280px) / 2 + 60px));
       gap: 8px;
-      background: #fff;
     }
 
     .rl-subtitle {
