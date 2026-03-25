@@ -406,7 +406,7 @@
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
-      padding: 40px 48px 40px 72px;
+      padding: 40px 48px;
       position: relative;
     }
 
@@ -559,7 +559,7 @@
     .rl-timeline::before {
       content: '';
       position: absolute;
-      left: 47px;
+      left: 56px;
       top: 90px;
       bottom: 48px;
       width: 2px;
@@ -568,22 +568,21 @@
 
     .rl-tl-item {
       display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 20px;
-      padding: 16px 0;
+      grid-template-columns: 16px 70px 1fr;
+      gap: 0 20px;
+      align-items: center;
+      padding: 18px 0;
       position: relative;
     }
 
     .rl-tl-item::before {
       content: '';
-      position: absolute;
-      left: -32px;
-      top: 22px;
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background: #f5a623;
       border: 3px solid #fff;
+      box-shadow: 0 0 0 1px rgba(245,166,35,0.3);
     }
 
     .rl-tl-year {
