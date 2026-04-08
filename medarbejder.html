@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medarbejder | Kipling Travel</title>
+  <link rel="stylesheet" href="style.css?v=5">
+  <style>
+
+    body { background: #FAF4EB; }
+
+    /* ============ HERO ============ */
+
+    .rl-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+      background: #fff;
+    }
+
+    .rl-hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: left;
+      padding: 60px 56px 60px calc(max(60px, (100vw - 1280px) / 2 + 60px));
+      gap: 8px;
+    }
+
+    .rl-subtitle {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #999;
+      margin: 4px 0 0;
+    }
+
+    .rl-name {
+      font-size: 42px;
+      font-weight: 300;
+      color: #1a1a1a;
+      line-height: 1.2;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+
+    .rl-tagline {
+      font-size: 15px;
+      color: #777;
+      font-style: italic;
+      margin: 4px 0 0;
+      display: none;
+    }
+
+    .rl-quote {
+      font-size: 20px;
+      font-style: italic;
+      color: #555;
+      line-height: 1.5;
+      border-left: none;
+      padding-left: 0;
+      margin: 8px 0 20px;
+      display: none;
+    }
+
+    .rl-bio-hero {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+      margin: 16px 0 0;
+    }
+
+    .rl-bio-hero a {
+      color: #f5a623;
+      text-decoration: none;
+    }
+
+    .rl-bio-hero a:hover {
+      text-decoration: underline;
+    }
+
+    .rl-books-hero {
+      margin-top: 20px;
+    }
+
+    .rl-books-hero-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+
+    .rl-books-hero-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+      margin: 0;
+    }
+
+    .rl-books-hero-text em {
+      color: #444;
+    }
+
+    .rl-books-hero-text a {
+      color: #f5a623;
+      text-decoration: none;
+    }
+
+    .rl-books-hero-text a:hover {
+      text-decoration: underline;
+    }
+
+    .rl-hero-divider {
+      width: 60px;
+      height: 4px;
+      background: #f5a623;
+      border-radius: 2px;
+      margin: 24px 0 0;
+    }
+
+    .rl-contact-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      justify-content: flex-start;
+    }
+
+    .rl-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .rl-contact-btn.email {
+      background: rgba(245, 166, 35, 0.1);
+      color: #f5a623;
+    }
+
+    .rl-contact-btn.email:hover {
+      background: rgba(245, 166, 35, 0.2);
+    }
+
+    .rl-contact-btn.linkedin {
+      background: #0077b5;
+      color: #fff;
+    }
+
+    .rl-contact-btn.linkedin:hover {
+      background: #005f8d;
+    }
+
+    .rl-hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rl-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ============ SECTIONS ============ */
+
+    .rl-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 48px 60px;
+    }
+
+    .rl-section-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+      color: #000;
+      margin: 0 0 24px;
+    }
+
+    .rl-divider {
+      width: 48px;
+      height: 3px;
+      background: #f5a623;
+      border-radius: 2px;
+      margin-bottom: 32px;
+    }
+
+    /* ============ OM ============ */
+
+    .rl-bio {
+      max-width: 820px;
+    }
+
+    .rl-bio p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+      margin: 0 0 16px;
+    }
+
+    /* ============ SPECIALER ============ */
+
+    .rl-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .rl-tag {
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      background: rgba(217, 217, 217, 0.3);
+      color: #fff;
+      border: none;
+    }
+
+    /* ============ TWO-COLUMN LAYOUT ============ */
+
+    .rl-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    /* ============ KVALIFIKATIONER ============ */
+
+    .rl-quals {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .rl-qual {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .rl-qual strong {
+      color: #1a1a1a;
+    }
+
+    .rl-qual a {
+      color: #f5a623;
+      text-decoration: none;
+    }
+
+    .rl-qual a:hover {
+      text-decoration: underline;
+    }
+
+    /* ============ MEDIER ============ */
+
+    .rl-media-subtitle {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 32px 0 16px;
+    }
+
+    .rl-media-subtitle:first-of-type {
+      margin-top: 0;
+    }
+
+    .rl-books {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-width: 820px;
+    }
+
+    .rl-books-intro {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+      margin: 0;
+    }
+
+    .rl-book {
+      padding: 28px 32px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      border-left: 4px solid #f5a623;
+    }
+
+    .rl-book-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+
+    .rl-book-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+      margin: 0 0 12px;
+    }
+
+    .rl-book-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f5a623;
+      text-decoration: none;
+    }
+
+    .rl-book-link:hover {
+      text-decoration: underline;
+    }
+
+    .rl-book-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(245, 166, 35, 0.12);
+      color: #f5a623;
+      margin-bottom: 8px;
+    }
+
+    /* ============ DESTINATIONER ============ */
+
+    .rl-destinations {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rl-dest {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 180px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .rl-dest:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .rl-dest img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .rl-dest:hover img {
+      transform: scale(1.05);
+    }
+
+    .rl-dest-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      transition: background 0.3s ease;
+    }
+
+    .rl-dest:hover .rl-dest-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%);
+    }
+
+    .rl-dest h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .rl-dest:hover h3 {
+      transform: translateY(-4px);
+    }
+
+    .rl-dest p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.9);
+      margin: 8px 0 0;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .rl-dest:hover p {
+      max-height: 100px;
+      opacity: 1;
+    }
+
+    /* ============ KARRIERE TIMELINE ============ */
+
+    .rl-timeline {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+      padding: 40px 48px;
+      position: relative;
+    }
+
+    .rl-timeline .rl-tl-header {
+      font-size: 22px;
+      font-weight: 700;
+      color: #000;
+      margin: 0 0 24px;
+    }
+
+    /* ============ FOREDRAG ============ */
+
+    .rl-foredrag {
+      max-width: 100%;
+    }
+
+    .rl-foredrag-header {
+      display: grid;
+      grid-template-columns: 1.2fr 1.5fr 1.5fr auto;
+      gap: 20px;
+      padding: 14px 24px;
+      background: #e0d5c4;
+      border-radius: 6px 6px 0 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .rl-foredrag-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1.5fr 1.5fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 20px 24px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .rl-foredrag-btn {
+      display: inline-block;
+      padding: 10px 28px;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .rl-foredrag-btn:hover {
+      background: #555;
+    }
+
+    /* ============ KUNDEUDTALELSER ============ */
+
+    .rl-testimonials {
+      background: #333;
+      padding: 72px 60px;
+    }
+
+    .rl-testimonials-inner {
+      max-width: 750px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rl-testimonial-track {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    .rl-testimonial {
+      text-align: center;
+      padding: 0 60px;
+      box-sizing: border-box;
+      min-width: 100%;
+      width: 100%;
+    }
+
+    .rl-testimonial-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .rl-testimonial-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      padding: 0;
+    }
+
+    .rl-testimonial-dot.active {
+      background: #f5a623;
+    }
+
+    .rl-quote-icon {
+      font-size: 74px;
+      line-height: 1;
+      color: #f5a623;
+      font-family: Georgia, serif;
+      margin-bottom: 12px;
+    }
+
+    .rl-quote-text {
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.7;
+      color: #fff;
+      margin: 0 0 24px;
+      padding: 0;
+      font-weight: 400;
+      word-wrap: break-word;
+    }
+
+    .rl-quote-author {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin: 0 0 4px;
+    }
+
+    .rl-quote-trip {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0 0 20px;
+    }
+
+    .rl-quote-link {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .rl-quote-link:hover {
+      color: #fff;
+    }
+
+    .rl-timeline::before {
+      content: '';
+      position: absolute;
+      left: 56px;
+      top: 90px;
+      bottom: 48px;
+      width: 2px;
+      background: rgba(245, 166, 35, 0.25);
+    }
+
+    .rl-tl-item {
+      display: grid;
+      grid-template-columns: 16px 70px 1fr;
+      gap: 0 20px;
+      align-items: center;
+      padding: 18px 0;
+      position: relative;
+    }
+
+    .rl-tl-item::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #f5a623;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 1px rgba(245,166,35,0.3);
+    }
+
+    .rl-tl-year {
+      font-size: 16px;
+      font-weight: 700;
+      color: #f5a623;
+    }
+
+    .rl-tl-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* ============ KOMMENDE REJSER ============ */
+
+    .rl-trips {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rl-trip {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+    }
+
+    .rl-trip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .rl-trip-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .rl-trip-body {
+      padding: 24px;
+    }
+
+    .rl-trip-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+
+    .rl-trip-meta {
+      font-size: 14px;
+      color: #888;
+      margin: 0 0 12px;
+    }
+
+    .rl-trip-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: #f5a623;
+    }
+
+    /* ============ ALTERNATING BACKGROUNDS ============ */
+
+    .rl-section.alt {
+      background: #FAF4EB;
+      padding-top: 72px;
+      padding-bottom: 72px;
+      max-width: 100%;
+    }
+
+    .rl-section.alt > * {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    .rl-section.alt > .rl-section-title,
+    .rl-section.alt > .rl-divider {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    .rl-books-section {
+      background: #FAF4EB !important;
+    }
+
+    /* Dark section */
+    .rl-dark {
+      background: #333 !important;
+    }
+
+    .rl-dark .rl-section-title {
+      color: #fff;
+    }
+
+    .rl-dark .rl-divider {
+      background: #FF9900;
+    }
+
+    .rl-dark .rl-qual {
+      color: #ccc;
+    }
+
+    .rl-dark .rl-qual strong {
+      color: #fff;
+    }
+
+    .rl-dark .rl-qual a {
+      color: #FF9900;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="rejseoversigt.html">Rejseoversigt</a>
+    <a href="bestil.html">Formular A</a>
+    <a href="formular.html">Formular B</a>
+    <a href="formularx.html">Formular X</a>
+    <a href="rejseleder.html" class="active">Rejseleder</a>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <div class="rl-hero">
+    <div class="rl-hero-text">
+      <h1 class="rl-name">Henrik Egede-Lassen</h1>
+      <span class="rl-subtitle">Rejseleder</span>
+
+      <div class="rl-contact-row">
+        <a href="mailto:info@kiplingtravel.dk" class="rl-contact-btn email">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
+          info@kiplingtravel.dk
+        </a>
+        <a href="#" class="rl-contact-btn linkedin">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" fill="currentColor"/></svg>
+          LinkedIn
+        </a>
+      </div>
+
+      <p class="rl-bio-hero">Henrik Egede-Lassen er naturfotograf, safarileder, forfatter, dykker og filmproducent &mdash; samt medlem af <a href="https://adventurersclub.dk" target="_blank">Eventyrernes Klub</a>. Allerede som barn drømte han om at komme ud i verden, dykke med hajer og møde fjerne folkeslag. Mens vennerne fik uddannelse og familie, forsøgte Henrik at leve af sin eventyrlyst. Som 26-årig kom han for alvor i gang med sit voksenliv, da han i 1991 grundlagde Albatros Adventure afdelingen.</p>
+
+      <p class="rl-bio-hero">Efter nogle formative år i rejsebranchen og utallige ekspeditioner til alle syv kontinenter etablerede han i 2001 naturformidlingsbureauet Zoomedia, som bl.a. har lavet opgaver for National Geographic, BBC, NOVA og Warner Bros. Han har desuden været vært på flere rejseprogrammer på TV.</p>
+    </div>
+    <div class="rl-hero-image">
+      <img src="Billeder/Rejseleder/Henrik.jpg" alt="Henrik Egede-Lassen">
+    </div>
+  </div>
+
+  <!-- ============ SPECIALER & KVALIFIKATIONER ============ -->
+  <div class="rl-section alt rl-dark">
+    <div class="rl-two-col">
+      <div>
+        <h2 class="rl-section-title">Baggrund og erfaring</h2>
+        <div class="rl-divider"></div>
+        <div class="rl-quals">
+          <p class="rl-qual">Medgrundlægger, <strong>Albatros Adventure</strong> (1991) &mdash; en af Danmarks største eventyrrejsebureauer.</p>
+          <p class="rl-qual">Stifter, <strong>Zoomedia</strong> (2001) &mdash; naturformidlingsbureau med opgaver for National Geographic, BBC, NOVA og Warner Bros.</p>
+          <p class="rl-qual">Medlem af <strong>Eventyrernes Klub</strong> (optaget 2020) &mdash; <a href="https://adventurersclub.dk" target="_blank">adventurersclub.dk</a></p>
+        </div>
+      </div>
+      <div>
+        <h2 class="rl-section-title">Specialer og kompetencer</h2>
+        <div class="rl-divider"></div>
+        <div class="rl-tags">
+          <span class="rl-tag">Naturfotografi</span>
+          <span class="rl-tag">Safari & Wildlife</span>
+          <span class="rl-tag">Borneo</span>
+          <span class="rl-tag">Afrika</span>
+          <span class="rl-tag">Nepal</span>
+          <span class="rl-tag">Foredragsholder</span>
+          <span class="rl-tag">Filmproduktion</span>
+          <span class="rl-tag">National Geographic</span>
+          <span class="rl-tag">BBC</span>
+          <span class="rl-tag">Ekspeditionsleder</span>
+          <span class="rl-tag">Dykker</span>
+          <span class="rl-tag">Alle 7 kontinenter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MEDIER ============ -->
+  <div class="rl-section alt rl-books-section">
+    <h2 class="rl-section-title">Medier</h2>
+
+    <h3 class="rl-media-subtitle">Bøger</h3>
+    <div class="rl-books">
+      <div class="rl-book">
+        <h3 class="rl-book-title">"Hvis jeg overlever det her &ndash; bliver det en god historie" (2019)</h3>
+        <p class="rl-book-desc">Selvbiografisk beretning om ekspeditioner, naturformidling og eventyrlivet. Henriks første bog om et liv uden for det almindelige.</p>
+        <a href="#" class="rl-book-link">Se bogen på kiplingtravel.dk &rarr;</a>
+      </div>
+
+      <div class="rl-book">
+        <span class="rl-book-badge">Udkommer snart</span>
+        <h3 class="rl-book-title">"Ufokuseret overmod &ndash; vanvittige historier fra en smuk planet"</h3>
+        <p class="rl-book-desc">Fortsættelsen med forord af Andreas Mogensen. En samling af Henriks mest vanvittige oplevelser fra jordens hjørner.</p>
+      </div>
+    </div>
+
+    <h3 class="rl-media-subtitle">Podcast</h3>
+    <div class="rl-books">
+      <div class="rl-book">
+        <h3 class="rl-book-title">Lorem ipsum dolor sit amet</h3>
+        <p class="rl-book-desc">Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+    <h3 class="rl-media-subtitle">Dokumentarer</h3>
+    <div class="rl-books">
+      <div class="rl-book">
+        <h3 class="rl-book-title">Lorem ipsum dolor sit amet</h3>
+        <p class="rl-book-desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr style="max-width: 1280px; margin: 0 auto; border: none; border-top: 2px solid #f5a623; opacity: 0.5;">
+
+  <!-- ============ DESTINATIONER ============ -->
+  <div class="rl-section">
+    <h2 class="rl-section-title">Nogle af Henriks yndlingslande</h2>
+    <p style="font-size: 16px; line-height: 1.8; color: #444; margin: 0 0 28px; max-width: 820px;">Med ekspeditioner til alle syv kontinenter er der få steder på kloden Henrik ikke kender. Men der er destinationer der har en særlig plads &mdash; steder han vender tilbage til igen og igen, og som han leder rejser til med Kipling Travel.</p>
+    <div class="rl-destinations">
+      <div class="rl-dest">
+        <img src="Billeder/Tanzania.png" alt="Tanzania & Zanzibar">
+        <div class="rl-dest-overlay">
+          <h3>Tanzania & Zanzibar</h3>
+          <p>Serengeti, Ngorongoro-krateret og Hadza-folket ved Lake Eyasi. Afrikas vildeste wildlife-sceneri.</p>
+        </div>
+      </div>
+      <div class="rl-dest">
+        <img src="Billeder/Kenya.png" alt="Kenya">
+        <div class="rl-dest-overlay">
+          <h3>Kenya</h3>
+          <p>Den store gnu-migration og Maasai Mara. Et safari-mekka Henrik kender i detaljer.</p>
+        </div>
+      </div>
+      <div class="rl-dest">
+        <img src="Billeder/Nepal.png" alt="Nepal">
+        <div class="rl-dest-overlay">
+          <h3>Nepal</h3>
+          <p>Himalayaens trekkingruter og kulturelle rigdom. Henrik har ledt adskillige Nepal-ekspeditioner.</p>
+        </div>
+      </div>
+      <div class="rl-dest">
+        <img src="Billeder/Borneo.png" alt="Borneo">
+        <div class="rl-dest-overlay">
+          <h3>Borneo</h3>
+          <p>Det vilde Sarawak, ibanfolket i junglen og orangutanger i Bako National Park.</p>
+        </div>
+      </div>
+      <div class="rl-dest">
+        <img src="Billeder/Indien.png" alt="Indien">
+        <div class="rl-dest-overlay">
+          <h3>Indien</h3>
+          <p>Fra tigre i nationalparker til krydderimarkederne i Rajasthan. Et kontinent i sig selv.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ KUNDEUDTALELSER ============ -->
+  <div class="rl-testimonials">
+    <div class="rl-testimonials-inner">
+      <div class="rl-testimonial-track" id="testimonialTrack">
+        <div class="rl-testimonial">
+          <div class="rl-quote-icon">&rdquo;</div>
+          <blockquote class="rl-quote-text">Som altid en forrygende rejse med Kipling. Vi var på den store kulturrejse i Marokko, og det var intet mindre end fantastisk. Alt klappede bare som det skulle. Hoteller, riads mm var helt perfekt.</blockquote>
+          <p class="rl-quote-author">- Connie</p>
+          <p class="rl-quote-trip">Marokko</p>
+          <a href="https://www.kiplingtravel.dk/evalueringer" class="rl-quote-link">Læs hele anmeldelsen <u>her</u></a>
+        </div>
+        <div class="rl-testimonial">
+          <div class="rl-quote-icon">&rdquo;</div>
+          <blockquote class="rl-quote-text">En helt fantastisk tur til Tanzania med Henrik som rejseleder. Hans viden om dyrelivet og naturen er enestående, og han formår at skabe en uforglemmelig oplevelse for alle.</blockquote>
+          <p class="rl-quote-author">- Jens &amp; Mette</p>
+          <p class="rl-quote-trip">Tanzania</p>
+          <a href="https://www.kiplingtravel.dk/evalueringer" class="rl-quote-link">Læs hele anmeldelsen <u>her</u></a>
+        </div>
+      </div>
+      <div class="rl-testimonial-dots">
+        <button class="rl-testimonial-dot active" onclick="goTestimonial(0)"></button>
+        <button class="rl-testimonial-dot" onclick="goTestimonial(1)"></button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tTrack = document.getElementById('testimonialTrack');
+    const tDots = document.querySelectorAll('.rl-testimonial-dot');
+    const tTotal = tDots.length;
+    function goTestimonial(i) {
+      tTrack.style.transform = 'translateX(-' + (i * 100) + '%)';
+      tDots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+    }
+    let tIdx = 0;
+    setInterval(() => { tIdx = (tIdx + 1) % tTotal; goTestimonial(tIdx); }, 6000);
+  </script>
+
+  <!-- ============ KARRIERE ============ -->
+  <div class="rl-section">
+    <div class="rl-timeline">
+      <h2 class="rl-tl-header">Karriere</h2>
+      <div class="rl-tl-item">
+        <span class="rl-tl-year">1991</span>
+        <span class="rl-tl-desc">Medgrundlægger af Albatros Adventure &mdash; ekspeditioner til alle 7 kontinenter</span>
+      </div>
+      <div class="rl-tl-item">
+        <span class="rl-tl-year">2001</span>
+        <span class="rl-tl-desc">Stifter Zoomedia &mdash; naturfotograf og filmproducent for National Geographic, BBC, NOVA og Warner Bros.</span>
+      </div>
+      <div class="rl-tl-item">
+        <span class="rl-tl-year">2019</span>
+        <span class="rl-tl-desc">Udgiver "Hvis jeg overlever det her &ndash; bliver det en god historie"</span>
+      </div>
+      <div class="rl-tl-item">
+        <span class="rl-tl-year">2020</span>
+        <span class="rl-tl-desc">Optaget i Eventyrernes Klub</span>
+      </div>
+      <div class="rl-tl-item">
+        <span class="rl-tl-year">Nu</span>
+        <span class="rl-tl-desc">Rejseleder hos Kipling Travel med speciale i safari og wildlife-rejser</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOREDRAG ============ -->
+  <div class="rl-section">
+    <h2 class="rl-section-title">Foredrag</h2>
+    <div class="rl-foredrag">
+      <div class="rl-foredrag-header">
+        <span>Næste foredrag</span>
+        <span>Dato og tid</span>
+        <span>Sted</span>
+        <span></span>
+      </div>
+      <div class="rl-foredrag-row">
+        <span>Nepal</span>
+        <span>26. maj 2026 · Klokken 19:30 - 21:00</span>
+        <span>Café Globen, Turesensgade 2B, 1368 København K</span>
+        <a href="#" class="rl-foredrag-btn">Læs mere</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ KOMMENDE REJSER ============ -->
+  <div class="rl-section">
+    <h2 class="rl-section-title">Kommende rejser med Henrik Egede-Lassen</h2>
+  </div>
+  <div class="container" style="padding-top: 0; padding-left: 60px; padding-right: 60px;">
+    <div class="grid">
+
+      <a class="card" href="#">
+        <div class="card-image">
+          <img src="Billeder/Rejseleder/Borneo.png" alt="Fotosafari i Sarawak på Borneo">
+        </div>
+        <div class="card-country">
+          <div class="pill pill-country">
+            <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg></span>
+            <span class="pill-text">Borneo</span>
+          </div>
+        </div>
+        <div class="card-badges">
+          <div class="pill pill-detail">
+            <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
+            <span class="pill-text">Grupperejse</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-title">Fotosafari i<br>Sarawak på Borneo</div>
+          <div class="card-meta">
+            <div class="pill pill-detail">
+              <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span>
+              <span class="pill-text">10 dage</span>
+            </div>
+            <div class="pill pill-detail">
+              <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></span>
+              <span class="pill-text">fra 23.998,-</span>
+            </div>
+          </div>
+          <ul class="card-highlights">
+            <li>Det vilde Sarawak</li>
+            <li>Ibanfolket i junglen</li>
+            <li>Orangutanger i Bako National Park</li>
+            <li>Med Henrik som rejseleder</li>
+          </ul>
+          <span class="card-link">Se rejsen <span class="card-arrow">›</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="card-image">
+          <img src="Billeder/Rejseleder/Sri Lanka.png" alt="Fotosafari til det ukendte Sri Lanka">
+        </div>
+        <div class="card-country">
+          <div class="pill pill-country">
+            <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg></span>
+            <span class="pill-text">Sri Lanka</span>
+          </div>
+        </div>
+        <div class="card-badges">
+          <div class="pill pill-detail">
+            <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
+            <span class="pill-text">Grupperejse</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-title">Fotosafari til det<br>ukendte Sri Lanka</div>
+          <div class="card-meta">
+            <div class="pill pill-detail">
+              <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span>
+              <span class="pill-text">10 dage</span>
+            </div>
+            <div class="pill pill-detail">
+              <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></span>
+              <span class="pill-text">fra 22.998,-</span>
+            </div>
+          </div>
+          <ul class="card-highlights">
+            <li>Ukendte naturperler</li>
+            <li>Elefanter og leoparder</li>
+            <li>Fotosafari med Henrik</li>
+            <li>Dansk rejseleder</li>
+          </ul>
+          <span class="card-link">Se rejsen <span class="card-arrow">›</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="card-image">
+          <img src="Billeder/Nepal rejse.png" alt="Nepal safari med dansk rejseleder">
+        </div>
+        <div class="card-country">
+          <div class="pill pill-country">
+            <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg></span>
+            <span class="pill-text">Nepal</span>
+          </div>
+        </div>
+        <div class="card-badges">
+          <div class="pill pill-detail">
+            <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
+            <span class="pill-text">Grupperejse</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-title">Nepal safari med<br>dansk rejseleder</div>
+          <div class="card-meta">
+            <div class="pill pill-detail">
+              <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span>
+              <span class="pill-text">11 dage</span>
+            </div>
+            <div class="pill pill-detail">
+              <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></span>
+              <span class="pill-text">fra 27.998,-</span>
+            </div>
+          </div>
+          <ul class="card-highlights">
+            <li>Himalayaens trekkingruter</li>
+            <li>Kulturel rigdom i Kathmandu</li>
+            <li>Safari og wildlife</li>
+            <li>Henrik som ekspeditionsleder</li>
+          </ul>
+          <span class="card-link">Se rejsen <span class="card-arrow">›</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="card-image">
+          <img src="Billeder/Tanzania rejse.png" alt="Tanzania safari med dansk rejseleder">
+        </div>
+        <div class="card-country">
+          <div class="pill pill-country">
+            <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg></span>
+            <span class="pill-text">Tanzania</span>
+          </div>
+        </div>
+        <div class="card-badges">
+          <div class="pill pill-detail">
+            <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
+            <span class="pill-text">Grupperejse</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-title">Tanzania safari med<br>dansk rejseleder</div>
+          <div class="card-meta">
+            <div class="pill pill-detail">
+              <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span>
+              <span class="pill-text">11 dage</span>
+            </div>
+            <div class="pill pill-detail">
+              <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></span>
+              <span class="pill-text">fra 29.798,-</span>
+            </div>
+          </div>
+          <ul class="card-highlights">
+            <li>Serengeti og Ngorongoro</li>
+            <li>Afrikas vildeste wildlife</li>
+            <li>Zanzibar tilvalg</li>
+            <li>Henrik som safarileder</li>
+          </ul>
+          <span class="card-link">Se rejsen <span class="card-arrow">›</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="card-image">
+          <img src="Billeder/Rejseleder/Sneleopard.png" alt="Sneleopardens rige">
+        </div>
+        <div class="card-country">
+          <div class="pill pill-country">
+            <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg></span>
+            <span class="pill-text">Indien</span>
+          </div>
+        </div>
+        <div class="card-badges">
+          <div class="pill pill-detail">
+            <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
+            <span class="pill-text">Grupperejse</span>
+          </div>
+          <div class="pill pill-detail pill-award pill-award-a">
+            <span class="pill-icon pill-icon-award"><span class="award-d">A</span></span>
+            <span class="pill-text"><span class="award-bars"><i></i><i></i><i></i><i></i><i></i></span></span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-title">Sneleopardens<br>rige</div>
+          <div class="card-meta">
+            <div class="pill pill-detail">
+              <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span>
+              <span class="pill-text">11 dage</span>
+            </div>
+            <div class="pill pill-detail">
+              <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg></span>
+              <span class="pill-text">fra 28.998,-</span>
+            </div>
+          </div>
+          <ul class="card-highlights">
+            <li>Jagt på sneleoparden</li>
+            <li>Himalayas vildeste raubdyr</li>
+            <li>Unik wildlife-oplevelse</li>
+            <li>Med Henrik som rejseleder</li>
+          </ul>
+          <span class="card-link">Se rejsen <span class="card-arrow">›</span></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>
